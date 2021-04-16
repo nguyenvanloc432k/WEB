@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+ 
+/*flex */
+.flex {
+  display: flex !important; /* red color  */
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-col {
+  display: flex !important;
+  flex-direction: column;
+}
