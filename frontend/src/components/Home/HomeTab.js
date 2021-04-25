@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
+import "../../style/HomeTab.css"
 import HomeTabContent from "./HomeTabContent.js";
 import axios from "axios";
 
@@ -12,7 +13,7 @@ export default function HomeTab() {
 
   useEffect(() => {
     axios
-      .get(`localhost:4000/products`) // lay ve danh sach san pham
+      .get(`http://localhost:4000/products`) // lay ve danh sach san pham
       .then((res) => {
         setProducts(res.data); // set state cho products
       });
@@ -32,11 +33,10 @@ export default function HomeTab() {
 
   //Get product by date
   const today = new Date();
+  let dateProduct = [];
   if (products.length) {
-    const dateProduct = [...products]
-      .sort((a, b) => {
-        new Date(b.productDate) - new Date(a.productDate);
-      })
+      dateProduct = [...products]
+      .sort((a, b) => new Date(b.productDate) - new Date(a.productDate)) 
       .filter((v) => {
         if ((today - new Date(v.productDate)) / (1000 * 3600 * 24) < 10) {
           // lay nhung san pham moi trong 10 ngay
@@ -62,7 +62,7 @@ export default function HomeTab() {
 
   return (
     <div className="HomeTab">
-      <div className="homte-tab flex-center">
+      <div className="home-tab flex-center">
         <p
           onClick={() => {
             setCurrentTab(1);
