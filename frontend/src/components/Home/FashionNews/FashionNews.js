@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import '../../../App.css';
 import News from '../../News/News'
 import classNames from 'classnames'
 import axios from 'axios'
