@@ -48,3 +48,40 @@
     width: 100%;
     left: 0;
 }
+
+.tab-loadmore {
+    margin-bottom:  45px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.tab-loadmore-btn {
+    width: 200px;
+    height: 60px;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+}
+
+.tab-loadmore-loading {
+    position: absolute;
+}
+
+.loading-icon {
+    border: 3px solid #343434;
+    border-radius: 50%;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    width: 20px;
+    height: 20px;
+    animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

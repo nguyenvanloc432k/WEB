@@ -57,3 +57,24 @@
   display: flex !important;
   flex-direction: column;
 }
+
+/* Button */
+.btn {
+  background-color: #232323 !important;
+  color: #fff !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #343434 !important;
+  color: #fff !important;
+}
+.btn-nohover {
+  background-color: #232323 !important;
+  color: #fff !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
