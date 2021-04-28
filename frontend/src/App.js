@@ -1,23 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import AccountInfo from './components/Header/AccountInfo';
+import Header from './components/Header/Header';
+import FashionNews from "./components/Home/FashionNews/FashionNews";
+import Footer from "./components/Home/Footer/Footer";
+import Newsletter from "./components/Home/NewsLetter/NewsLetter";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <AccountInfo/>
+          <FashionNews/>
+            <Newsletter/>
+            <Footer/>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
