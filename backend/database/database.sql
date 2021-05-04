@@ -5,28 +5,32 @@ create table `laptop`.`Category` (
     `cateName` nvarchar(255) default null,
 	primary key(`cateID`)
 );
-
-insert into `laptop`.`Category` values ('1', 'Dưới 10 triệu');
-insert into `laptop`.`Category` values ('2', '10-15 triệu');
-insert into `laptop`.`Category` values ('3', '15-20 triệu');
-insert into `laptop`.`Category` values ('4', '20-25 triệu');
-insert into `laptop`.`Category` values ('5', 'Trên 25 triệu');
+INSERT INTO `laptop`.`Category`
+(`cateID`, `cateName`)
+VALUES
+('1', 'Dưới 10 triệu'),
+('2', '10-15 triệu'),
+('3', '15-20 triệu'),
+('4', '20-25 triệu'),
+('5', 'Trên 25 triệu');
 
 create table `laptop`.`Brand` (
 	`brandID` int(11) not null auto_increment,
     `brandName` nvarchar(63) default null,
     primary key(`brandID`)
 );
-
-insert into `laptop`.`Brand` values ('1', 'Dell');
-insert into `laptop`.`Brand` values ('3', 'Asus');
-insert into `laptop`.`Brand` values ('4', 'HP');
-insert into `laptop`.`Brand` values ('5', 'Apple(Macbook');
-insert into `laptop`.`Brand` values ('6', 'Lenovo');
-insert into `laptop`.`Brand` values ('7', 'Acer');
+INSERT INTO `laptop`.`Brand`
+(`brandID`, `brandName`)
+VALUES
+('1', 'Dell'),
+('3', 'Asus'),
+('4', 'HP'),
+('5', 'Apple(Macbook'),
+('6', 'Lenovo'),
+('7', 'Acer');
 
 create table `laptop`.`Customer` (
-	`customerID` int(11) not null,
+	`customerID` int(11) not null auto_increment,
     `customerName` nvarchar(63) not null,
     `address` nvarchar(63) default null,
     `city` nvarchar(31) default null,
@@ -37,13 +41,28 @@ create table `laptop`.`Customer` (
     constraint PK_Product primary key (`customerID`,`email`)
 );
 
+INSERT INTO `laptop`.`Customer`
+(`customerID`, `customerName`, `address`, `city`, `country`, `phone`, `email`, `password`)
+VALUES
+(1, 'admin1', 'Tòa B1 - ĐHBKHN', 'Hà Nội', 'Việt Nam', '0985632684', 'admin1@gmail.com', 'admin1'),
+(2, 'admin2', 'Tòa D3 - ĐHBKHN', 'Hà Nội', 'Việt Nam', '0854956238', 'admin2@gmail.com', 'admin2'),
+(3, 'admin3', 'Nhà TC - ĐHBKHN', 'Hà Nội', 'Việt Nam', '0821365981', 'admin3@gmail.com', 'admin3'),
+(4, 'admin4', 'Nhà D5 - ĐHBKHN', 'Hà Nội', 'Việt Nam', '0967845625', 'admin4@gmail.com', 'admin4'),
+(5, 'admin5', 'Nhà C1 - ĐHBKHN', 'Hà Nội', 'Việt Nam', '0995846390', 'admin5@gmail.com', 'admin5');
+
 create table `laptop`.`Cart` (
 	`cartID` int(11) not null,
     `cartPrice` int default null,
     `customerID` int(11) not null,
+    `number` int default null,
     constraint PK_Cart primary key (`cartID`,`customerID`),
     foreign key (`customerID`) references laptop.Customer(`customerID`)
 );
+INSERT INTO `laptop`.`Cart`
+(`cartID`, `cartPrice`, `customerID`, `number`)
+VALUES
+(4, 44980000, 4, 2),
+(5, 30990000, 5, 1);
 
 create table `laptop`.`Product` (
 	`productID` int(11) not null auto_increment,
@@ -52,7 +71,7 @@ create table `laptop`.`Product` (
     `productPrice` int default null,
 	`productQuantity` int default null,
     `productImg` varchar(127) default null,
-	`productDesciption` nvarchar(8191) default null,
+	`productDescription` nvarchar(8191) default null,
     `brandID` int(11) not null,
 	`productRAM` int default null,
     `productSSD` int default null,
@@ -64,47 +83,25 @@ create table `laptop`.`Product` (
     foreign key (`cateID`) references laptop.Category(`cateID`)
 );
 
-create table `laptop`.`CartProduct` (
-	`cartID` int(11) not null,
-    `numberOfProduct` int,
-    `productID` int(11) not null,
-    constraint PK_CartProduct primary key (`cartID`,`productID`),
-    foreign key (`cartID`) references laptop.Cart(`cartID`),
-    foreign key (`productID`) references laptop.Product(`productID`)
-);
 
-create table `laptop`.`Order` (
-	`orderID` int(11) not null,
-    `dateOrder` date,
-    `orderStatus` nvarchar(63) default null,
-    `customerID` int(11) not null,
-    primary key (`orderID`),
-    foreign key (`customerID`) references laptop.Customer(`customerID`)
-);
+CREATE TABLE laptop.`Order` (
+  `orderID` int NOT NULL,
+  `dateOrder` date DEFAULT NULL,
+  `orderStatus` varchar(63) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `customerID` int NOT NULL,
+  `number` int DEFAULT NULL,
+  PRIMARY KEY (`orderID`),
+  KEY `customerID` (`customerID`),
+  CONSTRAINT `Order_ibfk_1` FOREIGN KEY (`customerID`) REFERENCES `Customer` (`customerID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-create table `laptop`.`OrderProduct` (
-	`orderID` int(11) not null,
-    `productID` int(11) not null,
-    `numberOfProduct` int default null,
-    constraint PK_OrderProduct primary key (`orderID`,`productID`),
-    foreign key (`productID`) references laptop.Product(`productID`),
-    foreign key (`orderID`) references laptop.Order(`orderID`)
-);
+INSERT INTO `laptop`.`Order`
+(`orderID`, `dateOrder`, `orderStatus`, `customerID`, `number`)
+VALUES
+(1, '2021-01-24', 'Đã thanh toán', 1, 2),
+(2, '2021-02-02', 'Đã thanh toán', 2, 1),
+(3, '2021-04-25', 'Đang giao hàng', 3, 1);
 
-create table laptop.`Wishlist` (
-	`wishListID` int(11) not null,
-    `customerID` int(11) not null,
-    `productName` nvarchar(255) default null,
-    `productPrice` int default null,
-    `productImg` varchar(127) default null,
-    constraint PK_Wishlist primary key (`wishListID`,`customerID`),
-    foreign key (`customerID`) references laptop.Customer(`customerID`)
-);
-
-create table laptop.WishlistProduct (
-	wishListID int(11) not null,
-    productID int(11) not null
-);
 
 insert into `laptop`.`Product` values ('1', '5', 'MacBook Pro 16" 2019 Touch Bar', '69990000', '20', 'uploads/2020/11/16/636688207026676028_macbookair-1.jpg', 'Chiếc máy tính xách tay mạnh mẽ nhất, phá vỡ mọi giới hạn đã xuất hiện. MacBook Pro 16 Touch Bar với cấu hình siêu mạnh, bàn phím Magic mới và một màn hình lớn sẽ mang đến cho bạn sản phẩm “Pro” chưa từng thấy.
 Mọi giới hạn sinh ra là để phá vỡ, MacBook Pro 16 Touch Bar đã nâng cấp kích thước màn hình lên 16 inch và trở thành chiếc MacBook có màn hình lớn nhất từ trước tới nay. Bạn sẽ được tận hưởng màn hình Retina tuyệt đẹp, độ sáng tối đa 500 nits và hiển thị màu đen với độ sâu hoàn hảo.
@@ -691,5 +688,44 @@ bàn phím Lenovo Legion 5 15IMH05
 Tiết kiệm pin hơn, hỗ trợ sạc nhanh
 Là chiếc laptop gaming nhưng vẫn đảm bảo yếu tố di động, Lenovo Legion 5-15ARH05 có thời lượng pin dài và hệ thống quản lý năng lượng thông minh để bạn luôn tràn đầy năng lượng ở bất cứ đâu. Tốc độ sạc nhanh cho phép laptop có thể sạc từ 0 – 50% chỉ sau 30 phút. Ngoài ra, chế độ vô hiệu hóa card rời, giảm điện áp CPU khi bạn chạy những tác vụ nhẹ còn giúp tuổi thọ pin được kéo dài hơn nữa.', '6', '8', '512', '15.6", 1920 x 1080 Pixel, IPS, 120 Hz, 250 nits, LED-backlit', '2.3', 'Intel Core i5-10300H 2.50 GHz');
 
-insert into `laptop`.`Product` values ('', '', '', '', '', '', '', '', '', '', '', '', '');
+create table `laptop`.`CartProduct` (
+	`cartID` int(11) not null,
+    `productID` int(11) not null,
+    foreign key (`cartID`) references laptop.Cart(`cartID`),
+    foreign key (`productID`) references laptop.Product(`productID`)
+);
+INSERT INTO `laptop`.`CartProduct`
+(`cartID`, `productID`)
+VALUES
+(4, 19),	
+(4, 20), 
+(5, 15);
 
+create table `laptop`.`OrderProduct` (
+	`orderID` int(11) not null,
+    `productID` int(11) not null,
+    foreign key (`productID`) references laptop.Product(`productID`),
+    foreign key (`orderID`) references laptop.Order(`orderID`)
+);
+INSERT INTO `laptop`.`OrderProduct`
+(`orderID`, `productID`)
+VALUES
+(1, 1),
+(1, 2),
+(2, 5),
+(3, 11);
+
+create table laptop.`Wishlist` (
+	`wishListID` int(11) not null,
+    `customerID` int(11) not null,
+    `productID` int(11) not null,
+	foreign key (`customerID`) references laptop.Customer(`customerID`),
+    foreign key (`productID`) references laptop.Product(`productID`)
+);
+INSERT INTO `laptop`.`Wishlist`
+(`wishListID`, `customerID`, `productID`)
+VALUES
+(1, 1, 5),
+(1, 1, 9),
+(1, 1, 2),
+(2, 2, 18);
