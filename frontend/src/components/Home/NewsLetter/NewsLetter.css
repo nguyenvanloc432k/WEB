@@ -24,7 +24,7 @@
 .newsletter-container .newsletter-line {
     margin-top: 20px;
     background-color: #eee;
-    height: 100%;
+    height: 1px;
     width: 100%;
     position: absolute;
     bottom: 0;
