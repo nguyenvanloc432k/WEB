@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import "../App.css"
 import axios from 'axios';
-import Collection from "../components/Home/Collection";
-import HomeTab from "../components/Home/HomeTab"
+import Collection from "../components/Home/Collection/Collection";
+import HomeTab from "../components/Home/HomeTab/HomeTab"
 
 export default function Home() {
     const [collection, setCollection] = useState([]);
@@ -18,9 +18,9 @@ export default function Home() {
     return (
         <div className="Home">
             <HomeTab/>
-            {/* <Collection
+            <Collection
                 collection={collection}
-            /> */}
+            />
         </div>
     )
 }

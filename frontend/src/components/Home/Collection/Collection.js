@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom';
-import "../../style/Collection.css"
+import "./Collection.css"
 
 function Collection(props) {
 

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import '../../App.css';
-// import Product from '../Product/Product.js';
+import '../../../App.css';
+import Product from '../../Product/Product';
 
 export default function HomeTabContent(props) {
     const [limit, setLimit] = useState(10)
@@ -20,7 +20,7 @@ export default function HomeTabContent(props) {
 
     return(
         <div>
-            <div className="BestSeller" style= {{minHeight: `${height}px`}}> /* Template literals, attri using camelCase */
+            <div className="BestSeller" style= {{minHeight: `${height}px`}}>
                 {
                     limitProducts.map((item, index) => {
                         return (
@@ -53,13 +53,13 @@ export default function HomeTabContent(props) {
                     >
                         Load More
                     </div>
-                </div>
-                {
+                    {
                     loading === true &&
                     <div className="tab-loadmore-btn tab-loadmore-loading btn-nothover">
                         <div className="loading-icon"></div>
                     </div>
-                }
+                    }
+                </div>
             }
         </div>
     )
