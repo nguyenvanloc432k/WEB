@@ -1,4 +1,4 @@
-npm i -g json-server        // cai` json-server len may minh
+  npm i -g json-server        // cai` json-server len may minh
 
 tai thu muc chua db.json chay lenh:
     json-server -p 4000 --watch db.json

@@ -1,17 +1,17 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faFacebookF, faTwitter, faInstagram, faPinterest, faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom'
+import { faFacebookF, faTwitter, faInstagram, faPinterest, faGoogle } from '@fortawesome/free-brands-svg-icons';
+// import { Link } from 'react-router-dom'
 
 
 
 export default function Footer() {
 
     const handleClick = () => {
-        window.scrollTo(0,0) // dich chuyen ngag
+        window.scrollTo(0, 0) // dich chuyen ngag
     }
 
-    return(
+    return (
         <div className="Footer">
             <div className="footer-container">
                 <div className="footer-left">
@@ -21,11 +21,11 @@ export default function Footer() {
                     {/*<Link to="/contact" onClick={handleClick}>Contact us</Link>*/}
                 </div>
                 <div className="footer-right">
-                    <FontAwesomeIcon icon={faTwitter} className="cart-icon-footer"/>
-                    <FontAwesomeIcon icon={faFacebookF} className="cart-icon-footer"/>
-                    <FontAwesomeIcon icon={faInstagram} className="cart-icon-footer"/>
-                    <FontAwesomeIcon icon={faPinterest} className="cart-icon-footer"/>
-                    <FontAwesomeIcon icon={faGoogle} className="cart-icon-footer"/>
+                    <FontAwesomeIcon icon={faTwitter} className="cart-icon-footer" />
+                    <FontAwesomeIcon icon={faFacebookF} className="cart-icon-footer" />
+                    <FontAwesomeIcon icon={faInstagram} className="cart-icon-footer" />
+                    <FontAwesomeIcon icon={faPinterest} className="cart-icon-footer" />
+                    <FontAwesomeIcon icon={faGoogle} className="cart-icon-footer" />
                 </div>
             </div>
         </div>

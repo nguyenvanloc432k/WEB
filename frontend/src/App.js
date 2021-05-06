@@ -1,9 +1,9 @@
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 // import Header from './components/Header/Header';
 // import FashionNews from "./components/Home/FashionNews/FashionNews";
 // import Footer from "./components/Home/Footer/Footer";
-// import Newsletter from "./components/Home/NewsLetter/NewsLetter";
+import Newsletter from "./components/Home/NewsLetter/NewsLetter";
 import Banner from './components/Home/Banner/Banner';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
