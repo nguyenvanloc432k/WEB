@@ -1,21 +1,14 @@
-// import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header/Header';
-import FashionNews from "./components/Home/FashionNews/FashionNews";
-import Footer from "./components/Home/Footer/Footer";
-import Newsletter from "./components/Home/NewsLetter/NewsLetter";
-
+import {BrowserRouter as Router, Route} from "react-router-dom"
+import Home from './pages/Home'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          <FashionNews/>
-            <Newsletter/>
-            <Footer/>
-        </p>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Route path="/" exact component={Home}></Route>
+        <Route path="/home" exact component={Home}></Route>
+      </div>
+    </Router>
   );
 }
 

@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import News from '../../News/News'
 import classNames from 'classnames'
 import axios from 'axios'
-
+import './FashionNew.css'
 export default function FashionNews(props) {
     const [news, setNews] = useState([]); //khoi tao state new la rong va phuong thuc setNew
     const [currentPage, setCurrentPage] = useState(1); // khoi tao page hien tai la 1 va phuong thuc setPage
@@ -73,10 +72,9 @@ export default function FashionNews(props) {
                 <div className="news-box">
                     { currentNews.map(function(item, index) {
                         return (
-                            <News
-                                news={item}
-                                key={index}
-                            />
+                            <div>
+                                This is News
+                            </div>
                         )                        
                     })}
                 </div>

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import axios from 'axios'
-
+import './NewsLetter.css'
 export default function Newsletter () {
 
     const inputEmailRef = useRef();//chua tim hieu
@@ -25,10 +25,10 @@ export default function Newsletter () {
 
     return(
         <div className="Newsletter">
-            <div className="newsletter-container flex-center">
+            <div className="newsletter-container">
                 <div className="newsletter-title">Newsletter</div>
                 <div className="newsletter-small">Get timely updates from your favorite products</div>
-                <form className="newsletter-form" onSubmit={handleOnSubmit}>
+                <form className="newsletter-form flex-center" onSubmit={handleOnSubmit}>
                     <input
                         className="newsletter-input"
                         placeholder="Enter your email address"
