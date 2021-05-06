@@ -22,7 +22,7 @@ export default function Home() {
     
     return (
         <div className="Home">
-            <Banner/>
+            <Banner collection={collection}/>
             <RecommendBanner/>
             <HomeTab/>
             <Collection
