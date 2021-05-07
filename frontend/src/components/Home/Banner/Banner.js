@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { withRouter } from 'react-router-dom';
+import { withRouter  } from 'react-router-dom';
 import './Banner.css';
 import '../../../App.css'
 
-Banner.propTypes = {
-    collection: PropTypes.object,
-};
+// Banner.propTypes = {
+//     collection: PropTypes.object,
+// };
 
-Banner.defaultProps = {
-    collection: {}
-}
+// Banner.defaultProps = {
+//     collection: {}
+// }
 
 function Banner(props) {
     const [currentBanner, setCurrentBanner] = useState(1);
@@ -30,9 +30,9 @@ function Banner(props) {
         setCurrentBanner(1);
     }
     // chưa chạy vì  có thể chưa xét path
-    const redirect = (event) => {
+    const redirect = (e) => {
         window.scrollTo(0, 0);
-        props.history.push(`/collection/${event.target.id}`);
+        props.history.push(`/collection/${e.target.id}`);
     }
 
 
@@ -50,23 +50,23 @@ function Banner(props) {
                     </div>
                     {collection.length > 0 &&
                         <div className="flex-center">
-                            <div>
+                            
                                 <div
                                     id={collection[7]._id}
                                     onClick={redirect}
                                     className={currentBanner === 1 ? "banner-link fadeInLeft" : "banner-link"}
                                 >
                                     {collection[7].collectionName}
-                                </div>
+                            
                             </div>
-                            <div>
+                            
                                 <div
                                     id={collection[0]._id}
                                     onClick={redirect}
                                     className={currentBanner === 1 ? "banner-link fadeInRight" : "banner-link"}>
                                     {collection[0].collectionName}
                                 </div>
-                            </div>
+                            
                         </div>
 
                     }
@@ -88,14 +88,14 @@ function Banner(props) {
 
                         {collection.length > 0 &&
                             <div>
-                                <div>
+                                
                                     <div
                                         id={collection[1]._id}
                                         onClick={redirect}
                                         className={currentBanner === 2 ? "banner-link fadeInUp" : "banner-link"} >
                                         Shop now
                                 </div>
-                                </div>
+                                
                             </div>
                         }
 
@@ -120,14 +120,14 @@ function Banner(props) {
                     }
                     {collection.length > 0 &&
                         <div className="flex-center">
-                            <div>
+                            
                                 <div
                                     id={collection[3]._id}
                                     onClick={redirect}
                                     className={currentBanner === 3 ? "banner-link fadeInUp" : "banner-link"}>
                                     Shop now
                                 </div>
-                            </div>
+                            
                         </div>
                     }
                     {/* <div className={currentBanner === 3 ? "banner-title fadeInDown" : "banner-title"}>
@@ -166,4 +166,4 @@ function Banner(props) {
     );
 }
 
-export default Banner;
+export default withRouter(Banner);
