@@ -4,6 +4,7 @@ var Product = require('./routes/product');
 var Wishlist = require('./routes/wishlist');
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'))
 app.use('/products',Product);

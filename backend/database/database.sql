@@ -716,16 +716,16 @@ VALUES
 (3, 11);
 
 create table laptop.`Wishlist` (
-	`wishListID` int(11) not null,
     `customerID` int(11) not null,
     `productID` int(11) not null,
+    constraint PK_Wishlist primary key (`customerID`,`productID`),
 	foreign key (`customerID`) references laptop.Customer(`customerID`),
     foreign key (`productID`) references laptop.Product(`productID`)
 );
 INSERT INTO `laptop`.`Wishlist`
-(`wishListID`, `customerID`, `productID`)
+(`customerID`, `productID`)
 VALUES
-(1, 1, 5),
-(1, 1, 9),
-(1, 1, 2),
-(2, 2, 18);
+(1, 5),
+(1, 9),
+(1, 2),
+(2, 18);

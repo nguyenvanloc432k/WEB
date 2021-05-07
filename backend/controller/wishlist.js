@@ -11,22 +11,19 @@ module.exports.getAllByUser = async function(req, res){
     });
 }
 
-exports.add = (req, res, next) => {
-    var query = {};
-    query.wishlistID = req.body.customerID;
-    query.customerID = req.body.customerID;
-    query.productID = req.body.productID;
+module.exports.addOneToWishlist = async function(req, res){
+    const wishlist = {
+        customerID : req.body.customerID,
+        productID : req.body.productID
+    };
 
-    console.log(query);
+    console.log(wishlist);
 
-    Wishlist.addOneToWishlist(query, (ret) => {
-        if(ret) res.json({
-            status: "success"
-        });
-    });
+    await Wishlist.create(wishlist);
+    res.status(200).send(wishlist);
 };
 
-exports.delete = async function(req,res){
+module.exports.deleteOne = async function(req,res){
     var customerID = req.body.customerID;
 	var productID = req.body.productID;
 	await Wishlist.destroy({
