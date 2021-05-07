@@ -11,3 +11,18 @@ exports.getWishlist = (query, cb) => {
         cb(data);
     });
 }
+
+exports.addOneToWishlist = (query, cb) => {
+    var queryObj = {};
+    queryObj.wishlistID = query.customerID;
+    queryObj.customerID = query.customerID;
+    queryObj.productID = query.productID;
+
+    console.log(queryObj);
+
+    var sql = "INSERT INTO `laptop`.`Wishlist`(`wishListID`,`customerID`,`productID`)VALUES(" + queryObj.wishlistID + "," + queryObj.customerID + "," + queryObj.productID + ");";
+
+    sequelize.query(sql).then((data) => {
+        cb(data);
+    });
+};

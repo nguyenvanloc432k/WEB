@@ -19,3 +19,18 @@ exports.list = (req, res, next) => {
         res.json(data);
     });
 };
+
+exports.add = (req, res, next) => {
+    var query = {};
+    query.wishlistID = req.body.customerID;
+    query.customerID = req.body.customerID;
+    query.productID = req.body.productID;
+
+    console.log(query);
+
+    Wishlist.addOneToWishlist(query, (ret) => {
+        if(ret) res.json({
+            status: "success"
+        });
+    });
+};
