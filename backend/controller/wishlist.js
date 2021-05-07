@@ -1,24 +1,15 @@
-var Wishlist = require('../services/wishlist');
-var async = require('async');
+const Wishlist = require('../models/wishlist.model');
 
-exports.list = (req, res, next) => {
-    var query = {};
-    query.customerID = req.query.customerID;
-
-    async.series({
-        list: (cb) => {
-            Wishlist.getWishlist(query, (rows) => {
-                cb(null, rows[0])
-            });
+module.exports.getAllByUser = async function(req, res){
+    var customerID = req.params.customerID;
+    await Wishlist.findAll({
+        where:{
+            customerID : customerID
         }
-    }, (err, ret) => {
-        var data = {
-            status: "success",
-            list: ret.list
-        };
-        res.json(data);
+    }).then(function(wishlist) {
+        res.json(wishlist);
     });
-};
+}
 
 exports.add = (req, res, next) => {
     var query = {};
@@ -34,3 +25,15 @@ exports.add = (req, res, next) => {
         });
     });
 };
+
+exports.delete = async function(req,res){
+    var customerID = req.body.customerID;
+	var productID = req.body.productID;
+	await Wishlist.destroy({
+		where:{
+            customerID : customerID,
+			productID : productID
+		}
+	});
+	res.status(200).send("OK");
+}

@@ -26,3 +26,17 @@ exports.addOneToWishlist = (query, cb) => {
         cb(data);
     });
 };
+
+exports.deleteOneInWishlist = (query, cb) => {
+    var queryObj = {};
+    queryObj.customerID = query.customerID;
+    queryObj.productID = query.productID;
+
+    console.log(queryObj);
+
+    var sql = "DELETE FROM `laptop`.`Wishlist` WHERE customerID = " + queryObj.customerID + " and productID = " + queryObj.productID;
+
+    sequelize.query(sql).then((data) => {
+        cb(data);
+    });
+};

@@ -1,20 +1,21 @@
-var Sequelize = require('sequelize');
-var sequelize = require('../database/db');
+const Sequelize = require('sequelize');
+const sequelize = require('./connection');
 
-var Wishlist = sequelize.define('Wishlist', {
-    wishlistID: {
-        type: Sequelize.BIGINT(11),
+const Wishlist = sequelize.define('Wishlist', {
+    wishlistID :{
+        type : Sequelize.INTEGER,
         allowNull: false
     },
     customerID: {
-        type: Sequelize.BIGINT(11),
+        type: Sequelize.INTEGER,
         allowNull: false
     },
     productID: {
-        type: Sequelize.BIGINT(11),
+        type: Sequelize.INTEGER,
         allowNull: false
     }
-});
-
-
+},{
+    freezeTableName : true,
+    timestamps : false
+})
 module.exports = Wishlist;
