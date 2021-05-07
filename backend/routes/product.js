@@ -19,5 +19,5 @@ router.get("/",controller.getAll);
 router.get('/:id',controller.getById);
 router.post('/deleted/:id',controller.deleteProduct);
 router.post('/create',upload.array("productImg",12),controller.postProduct)
-router.post('/update',upload.array("productImg",12),controller.updateProduct)
+router.post('/update/:id',upload.array("productImg",12),controller.updateProduct)
 module.exports = router;

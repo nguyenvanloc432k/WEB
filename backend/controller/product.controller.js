@@ -75,7 +75,7 @@ module.exports.updateProduct = async function(req,res){
 		productCPU : req.body.productCPU
 		},{
 			where:{
-				productID : req.body.productID
+				productID : req.params.id
 			}
 		})
 	res.status(200).send('OK')
