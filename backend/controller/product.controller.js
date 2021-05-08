@@ -85,6 +85,7 @@ module.exports.updateProduct = async function(req,res){
 		})
 	}
 	img_new = img_new.join(',')
+
 	await Product.update({
 		cateID : req.body.cateID,
 		productName :req.body.productName,
@@ -106,7 +107,14 @@ module.exports.updateProduct = async function(req,res){
 	res.status(200).send('OK')
 }
 
-/*module.exports.reviewProduct = async function(req,res){
-	var id = req.params.id;
-
-}*/
+module.exports.reviewProduct = async function(req,res){
+	await Product.update(
+		{productVote : req.body.productVote},
+		{
+			where:{
+				productID : req.params.id
+		}
+		}
+	)
+	res.status(200).send('OK');
+}
