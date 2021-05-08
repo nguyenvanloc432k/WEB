@@ -23,9 +23,9 @@ const Product = sequelize.define('Product',{
         type : Sequelize.INTEGER,
     },
     productImg :{
-        type : Sequelize.STRING(127),
+        type : Sequelize.STRING(500),
     },
-    productDesciption :{
+    productDescription :{
         type : Sequelize.STRING(8191),
     },
     brandID :{
@@ -55,4 +55,3 @@ const Product = sequelize.define('Product',{
     freezeTableName : true,
     timestamps : false
 })
-module.exports = Product;
