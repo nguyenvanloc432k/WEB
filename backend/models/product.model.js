@@ -55,3 +55,4 @@ const Product = sequelize.define('Product',{
     freezeTableName : true,
     timestamps : false
 })
+module.exports = Product;
