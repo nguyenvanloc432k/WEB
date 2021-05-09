@@ -21,7 +21,7 @@ module.exports.getById = async function(req, res) {
 
 module.exports.deleteProduct = async function(req,res){
 	var productID = req.params.id;
-	await Product.destroy({
+	Product.destroy({
 		where:{
 			productID : productID
 		}
@@ -50,8 +50,9 @@ module.exports.postProduct = async function(req,res){
 		productWeight :req.body.productWeight,
 		productCPU : req.body.productCPU
 	}
-	await Product.create(product)
-	res.status(200).send(product)
+	Product.create(product)
+	.then(data=>{res.status(200).send(product)})
+	.catch(err=>res.status(500).send(err))
 }
 
 function myFunc(value,index,array){
@@ -85,8 +86,7 @@ module.exports.updateProduct = async function(req,res){
 		})
 	}
 	img_new = img_new.join(',')
-
-	await Product.update({
+	Product.update({
 		cateID : req.body.cateID,
 		productName :req.body.productName,
 		productPrice :req.body.productPrice,
@@ -104,7 +104,8 @@ module.exports.updateProduct = async function(req,res){
 				productID : req.params.id
 			}
 		})
-	res.status(200).send('OK')
+		.then(data=>{res.status(200).send("OK")})
+		.catch(err=>res.status(500).send(err))
 }
 
 module.exports.reviewProduct = async function(req,res){
