@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import '../../../App.css';
-import Product from '../../Product/Product';
+import '../../App.css';
+import Product from '../Product/Product';
 
 export default function HomeTabContent(props) {
     const [limit, setLimit] = useState(10)

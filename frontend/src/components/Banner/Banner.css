@@ -13,7 +13,7 @@
     background-repeat: repeat;
     background-position: center;
     transition: 1s;
-    background-image: url(../../../assets/S1.jpg);
+    background-image: url("../../assets/S1.jpg");
     position: absolute;
     background-size: cover;
     height: 100%;
@@ -53,7 +53,7 @@
 }
 
 .banner-second {
-    background-image: url(../../../assets/S2.jpg);
+    background-image: url("../../assets/S2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -74,7 +74,7 @@
     position: absolute;
     overflow: hidden;
 
-    background-image: url(../../../assets/S3.jpg);
+    background-image: url("../../assets/S3.jpg");
     background-position: center;
     background-size: cover;
 
