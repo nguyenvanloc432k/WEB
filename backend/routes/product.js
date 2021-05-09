@@ -16,7 +16,7 @@ var upload = multer({
     storage : storage
 });
 router.get("/",controller.getAll);
-router.get('/filter/price',controller.filterPrice);
+router.get('/filter',controller.filter);
 router.get('/:id',controller.getById);
 
 router.post('/deleted/:id',controller.deleteProduct);

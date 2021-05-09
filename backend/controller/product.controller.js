@@ -1,5 +1,6 @@
 const Product = require('../models/product.model');
 const {Op} = require('sequelize');
+let Brand = require('../models/brand.model')
 
 module.exports.getAll = async function(req,res){
     var products = await Product.findAll();
@@ -18,20 +19,63 @@ module.exports.getById = async function(req, res) {
 		res.json(products);
 	});
 }
-module.exports.filterPrice = async function(req, res) {
+module.exports.filter = async function(req, res) {
 	var min_price = req.query.minPrice;
 	var max_price = req.query.maxPrice;
-	console.log(req.params)
-	Product.findAll({
-		where :{
-			productPrice :{
-				[Op.between] : [min_price,max_price] 
-			}
+	var SSD = req.query.SSD;
+	var RAM = req.query.RAM;
+	var CPU = req.query.CPU;
+	var min_weight = req.query.minWeight;
+	var max_weight = req.query.maxWeight;
+	var brand = req.query.brand;
+
+	var whereObj = {};
+	if(min_price && max_price){
+		whereObj.productPrice = {
+			[Op.between] : [min_price,max_price]
 		}
+	};
+	if(SSD){
+		whereObj.productSSD = {
+			[Op.eq] : SSD
+		}
+	};
+	if(RAM){
+		whereObj.productRAM = {
+			[Op.eq] : RAM
+		}
+	};
+	if(CPU){
+		whereObj.productCPU = {
+			[Op.eq] : CPU
+		}
+	};
+	if(min_weight&&max_weight){
+		whereObj.productWeight = {
+			[Op.between] : [min_weight,max_weight]
+		}
+	};
+	if(brand){
+		console.log(brand)
+		var brandID = await Brand.findOne(
+			{
+				where:{
+					brandName : brand
+				}
+			}
+		)
+		console.log(brandID)
+		whereObj.brandID = {
+			[Op.eq] : brandID.getDataValue('brandID')
+		}
+	}
+	Product.findAll({
+		where : whereObj
 	}).then(function(products) {
 		res.json(products);
 	});
 }
+
 module.exports.deleteProduct = async function(req,res){
 	var productID = req.params.id;
 	Product.destroy({
