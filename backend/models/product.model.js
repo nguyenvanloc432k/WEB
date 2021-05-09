@@ -7,10 +7,6 @@ const Product = sequelize.define('Product',{
         autoIncrement : true,
         primaryKey : true,
     },
-    cateID :{
-        type : Sequelize.INTEGER,
-        allowNull : false
-    },
     productName :{
         type : Sequelize.STRING,
         allowNull : false
