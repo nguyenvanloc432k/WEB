@@ -18,7 +18,20 @@ module.exports.getById = async function(req, res) {
 		res.json(products);
 	});
 }
-
+module.exports.filterPrice = async function(req, res) {
+	var min_price = req.query.minPrice;
+	var max_price = req.query.maxPrice;
+	console.log(req.params)
+	Product.findAll({
+		where :{
+			productPrice :{
+				[Op.between] : [min_price,max_price] 
+			}
+		}
+	}).then(function(products) {
+		res.json(products);
+	});
+}
 module.exports.deleteProduct = async function(req,res){
 	var productID = req.params.id;
 	Product.destroy({
