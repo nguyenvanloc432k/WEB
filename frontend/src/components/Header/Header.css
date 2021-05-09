@@ -1,0 +1,54 @@
+.header{
+    position: absolute;
+    height: 75px;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /*create 4 grid for use*/
+    background: rgba(204, 204, 204, 0);
+    transition: .4s ease-in-out;
+}
+.menu {
+    list-style-type: none;
+    grid-column: 1/4;
+    justify-content: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input{
+    height: 30px;
+    font-size: 15px;
+    width: 100%;
+}
+li{
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+li a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+.header:hover{
+    background-color: #bbbbbb;
+}
+
+li:hover{
+    text-decoration: underline;
+}
+a:hover{
+    color: black;
+}
+.cart-icon{
+    padding-left: 15px;
+}
+
+.personal-icon{
+    padding-left: 15px;
+}

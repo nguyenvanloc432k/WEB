@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withRouter  } from 'react-router-dom';
 import './Banner.css';
-import '../../../App.css'
+import '../../App.css'
 
 // Banner.propTypes = {
 //     collection: PropTypes.object,
