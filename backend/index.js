@@ -16,11 +16,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'))
 
 // for parsing multipart/form-data
-app.use(upload.array())
 
 // router
 app.use('/products',Product);
 app.use('/wishlist', Wishlist);
+app.use(upload.array())
 app.use('/brand',Brand)
 
 const port = process.env.PORT || 4000 // export PORT = 4000

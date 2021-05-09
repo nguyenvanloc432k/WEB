@@ -71,9 +71,8 @@ module.exports.filter = async function(req, res) {
 	}
 	Product.findAll({
 		where : whereObj
-	}).then(function(products) {
-		res.json(products);
-	});
+	}).then(data=>{res.status(200).send(data)})
+	.catch(err=>res.status(500).send(err))
 }
 
 module.exports.deleteProduct = async function(req,res){
@@ -108,7 +107,7 @@ module.exports.postProduct = async function(req,res){
 		productCPU : req.body.productCPU
 	}
 	Product.create(product)
-	.then(data=>{res.status(200).send(product)})
+	.then(data=>{res.status(200).send(data)})
 	.catch(err=>res.status(500).send(err))
 }
 
