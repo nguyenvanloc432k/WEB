@@ -1,52 +1,63 @@
 const Sequelize = require('sequelize')
 const sequelize  = require('./connection')
 const Product = sequelize.define('Product',{
-    productID :{
+    productID: {
         type : Sequelize.INTEGER,
         allowNull : false,
         autoIncrement : true,
         primaryKey : true,
     },
-    productName :{
+    productName: {
         type : Sequelize.STRING,
         allowNull : false
     },
-    productPrice :{
+    productPrice: {
         type : Sequelize.INTEGER,
         allowNull : false
     },
-    productQuantity :{
+    productQuantity: {
         type : Sequelize.INTEGER,
     },
-    productImg :{
+    productImg: {
         type : Sequelize.STRING(500),
     },
-    productDescription :{
+    productDescription: {
         type : Sequelize.STRING(8191),
     },
-    brandID :{
+    brandID: {
         type : Sequelize.INTEGER,
         allowNull : false
     },
-    productRAM :{
+    productRAM: {
         type : Sequelize.INTEGER,
         allowNull : false
     },
-    productSSD :{
+    productSSD: {
         type : Sequelize.INTEGER,
         allowNull : false
     },
-    productDisplay :{
+    productDisplay: {
         type : Sequelize.STRING(127),
         allowNull : false
     },
-    productWeight :{
+    productWeight: {
         type : Sequelize.DOUBLE,
     },
-    productCPU :{
+    productCPU: {
         type : Sequelize.STRING,
         allowNull : false
     },
+    productSale: {
+        type : Sequelize.INTEGER
+    },
+    productSold: {
+        type : Sequelize.INTEGER,
+        allowNull : false
+    },
+    productDate: {
+        type : Sequelize.INTEGER,
+        allowNull : false
+    }
 },{
     freezeTableName : true,
     timestamps : false

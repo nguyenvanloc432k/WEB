@@ -37,19 +37,6 @@ VALUES
 (4, 'admin4', 'Nhà D5 - ĐHBKHN', 'Hà Nội', 'Việt Nam', '0967845625', 'admin4@gmail.com', 'admin4'),
 (5, 'admin5', 'Nhà C1 - ĐHBKHN', 'Hà Nội', 'Việt Nam', '0995846390', 'admin5@gmail.com', 'admin5');
 
-create table `laptop`.`Cart` (
-	`cartID` int(11) not null,
-    `cartPrice` int default null,
-    `customerID` int(11) not null,
-    `number` int default null,
-    constraint PK_Cart primary key (`cartID`,`customerID`),
-    foreign key (`customerID`) references laptop.Customer(`customerID`)
-);
-INSERT INTO `laptop`.`Cart`
-(`cartID`, `cartPrice`, `customerID`, `number`)
-VALUES
-(4, 44980000, 4, 2),
-(5, 30990000, 5, 1);
 
 create table `laptop`.`Product` (
 	`productID` int not null auto_increment primary key,
@@ -699,18 +686,22 @@ INSERT INTO `laptop`.`Product` (`productID`, `productName`, `productPrice`, `pro
 INSERT INTO `laptop`.`Product` (`productID`, `productName`, `productPrice`, `productQuantity`, `productImg`, `productDescription`, `brandID`, `productRAM`, `productSSD`, `productDisplay`, `productWeight`, `productCPU`, `productSale`, `productSold`, `productDate`) VALUES ('41', 'Laptop Lenovo ThinkBook 15 IIL', '18290000', '10', 'http://localhost:4000/images/lenovo-thinkbook-15iil-i3-20sm00d9vn-021320-101327-600x600.jpg', 'Lenovo ThinkBook 15 IIL sở hữu thiết kế đẳng cấp, sức mạnh cấu hình mạnh mẽ cùng với chất riêng của dòng Lenovo ThinkBook danh tiếng, xứng đáng là chiếc laptop chuyên nghiệp dành cho những người chuyên nghiệp.\n\nThiết kế đẳng cấp và chuyên nghiệp\nLà một chiếc laptop màn hình lớn 15,6 inch, nhưng Lenovo ThinkBook 15 IIL lại rất cơ động với thiết kế mỏng nhẹ khó tin. Laptop đi theo ngôn ngữ thiết kế đơn giản, hiện đại nhưng không kém phần tinh tế với kiểu dáng vuông vắn, những đường vát sắc sảo, dứt khoát, tạo nên vẻ đẹp mạnh mẽ. Phiên bản màu xám bạc độc đáo, thời trang và không bị lỗi thời.\nNhờ màn hình viền siêu mỏng, Lenovo ThinkBook 15 có kích thước chỉ tương đương những mẫu laptop 14 inch truyền thống. Đồng thời với độ mỏng 1,89cm và trọng lượng cực nhẹ 1,7kg, ThinkBook 15 có thể dễ dàng cầm trên tay hoặc cho vào túi xách mang đi bất cứ đâu.\nMàn hình viền mỏng sang trọng\nNhằm tối ưu cho sự cơ động cũng như nâng cao trải nghiệm thị giác cho người dùng, Lenovo ThinkBook 15 IIL đã cố gắng tối ưu phần viền màn hình mỏng hơn, cho tỉ lệ màn hình trên thân máy lên tới 83%. Màn hình này có kích thước tiêu chuẩn 15,6 inch, độ phân giải Full HD sắc nét, mang đến những hình ảnh tuyệt đẹp trước mắt bạn.\nNhờ màn hình độ phân giải cao viền mỏng, bạn có thể tập trung cho công việc hơn, chỉnh sửa ảnh và video với màu sắc chính xác hơn, đồng thời giải trí thêm phần thú vị.\nTốc độ vượt trội nhờ những linh kiện hàng đầu\nLenovo ThinkBook 15 IIL mang trên mình những linh kiện mới nhất, tốt nhất cho một chiếc laptop nhỏ gọn hiệu suất cao. Máy được trang bị bộ vi xử lý Intel Core i5 1035G1 thế hệ thứ 10 mới nhất, cho hiệu năng mạnh mẽ, xử lý trơn tru công việc của bạn. Intel Core i5 1035G1 với 4 lõi 8 luồng, sản xuất trên tiến trình 10nm tiên tiến, bộ nhớ đệm 6MB không chỉ mạnh mà còn rất tiết kiệm điện năng.\nĐi cùng con chip mạnh mẽ là RAM 8GB chuẩn DDR4, tăng cường khả năng đa nhiệm, giúp duyệt web nhiều tab hiệu quả mà không xảy ra hiện tượng lag giật. Kết hợp với hệ điều hành Windows 10 bản quyền, bạn sẽ có một chiếc laptop hoạt động ổn định, lý tưởng để phục vụ công việc.\nChạy tốt những ứng dụng đồ họa\nDù có thiết kế mỏng nhẹ nhưng Lenovo ThinkBook 15 IIL vẫn sở hữu card đồ họa rời AMD Radeon 630 2GB, giúp chạy các phần mềm đồ họa và chơi game hiệu quả hơn. Sức mạnh đồ họa của Lenovo ThinkBook 15 ở một đẳng cấp khác biệt so với những laptop chỉ có đồ họa onboard.\nỔ cứng SSD 512GB, khởi động và tắt máy trong chớp mắt\nLenovo ThinkBook 15 IIL trang bị sẵn ổ cứng thể rắn SSD với dung lượng cao 512GB. Không chỉ cho bạn không gian lưu trữ thoải mái, ổ cứng SSD còn có tác dụng tăng tốc toàn hệ thống với tốc độ khởi động, mở ứng dụng, truyền dữ liệu nhanh vượt trội. Mọi phản hồi đều diễn ra nhanh chóng để bạn không cần phải chờ đợi.\nTrang bị kết nối tiên tiến\nLenovo ThinkBook 15 IIL được tích hợp rất nhiều cổng kết nối, bao gồm cổng kết nối USB 3.1 luôn bật, có khả năng sạc cho điện thoại hoặc các thiết bị ngoại vi khác ngay cả khi bạn tắt máy. Ngoài ra, bạn còn có cổng USB 2.0, HDMI, đầu đọc thẻ đa năng, jack tai nghe, cổng mạng LAN.\nThưởng thức âm thanh cao cấp\nLenovo ThinkBook 15 sở hữu hai loa ngoài được tinh chỉnh âm thanh Dolby Audio, cho âm lượng giàu chi tiết, chất âm trầm ấm và giả lập âm thanh nổi sống động. Sẽ rất tuyệt vời nếu bạn xem phim trên ThinkBook 15 với hình ảnh sắc nét và cả âm thanh chất lượng.\n', '6', '8', '512', '15.6\", 1920 x 1080 Pixel, TN, 60 Hz, 220 nits, LED-backlit', '1.8', 'Intel Core i5-1035G1', 18090000, 900, '2020-12-6');
 INSERT INTO `laptop`.`Product` (`productID`, `productName`, `productPrice`, `productQuantity`, `productImg`, `productDescription`, `brandID`, `productRAM`, `productSSD`, `productDisplay`, `productWeight`, `productCPU`, `productSale`, `productSold`, `productDate`) VALUES ('42', 'Laptop Lenovo Yoga Slim 7 14ITL05', '24290000', '10', 'http://localhost:4000/images/lenovo-yoga-slim-7-1.jpg', 'Được chế tác cao cấp và thời trang, Lenovo Yoga Slim 7 14ITL05 là chiếc laptop di động thế hệ mới chạy bộ vi xử lý Intel thế hệ thứ 11 Tiger Lake, giúp bạn làm việc hiệu quả hơn. Bên cạnh đó, màn hình tuyệt đẹp và âm thanh Dolby Atmos sống động cũng mang đến những giờ phút giải trí hấp dẫn.\n\nVẻ đẹp năng động và thời trang\nĐúng như tên gọi, Lenovo Yoga Slim 7 là chiếc máy tính mỏng nhẹ, cao cấp và rất thời trang. Toàn thân máy chế tác từ vật liệu nhôm cao cấp, độ mỏng chỉ 1,49cm và trọng lượng cực nhẹ 1,36kg. Phiên bản trong bài có màu sắc Xám đá, đẹp theo phong cách mạnh mẽ. Tính di động của Lenovo Yoga Slim 7 là điều không phải bàn cãi, hơn nữa laptop quá đẹp để bạn có thêm nhiều cảm hứng trong mọi hoạt động.\nCấu hình vượt mong đợi, tốc độ là thế mạnh\nCuộc sống hiện đại luôn yêu cầu mọi thứ phải nhanh và chính xác. Lenovo Yoga Slim 7 sẽ là phương tiện tuyệt vời để phục vụ cho công việc của bạn nhờ cấu hình xuất sắc. Laptop trang bị bộ vi xử lý Intel Core i5 1135G7 thuộc thế hệ thứ 11 Tiger Lake mới nhất, mạnh mẽ, tiết kiệm điện năng và tích hợp GPU đồ họa Intel Iris Xe đỉnh cao. Hơn nữa, Lenovo Yoga Slim 7 còn có sẵn tới 16GB RAM DDR4 3200MHz và ổ cứng 512GB SSD. Tất cả các linh kiện trên Yoga Slim 7 đều đảm bảo cho máy có tốc độ đáng kinh ngạc, giúp bạn hoàn thành công việc trong thời gian ngắn nhất.\nMàn hình sắc nét, âm thanh sống động\nPhần viền màn hình của Lenovo Yoga Slim 7 đã đạt đến đỉnh cao của độ mỏng. Viền màn hình siêu mỏng giúp cho toàn bộ không gian trước mắt gần như đều là màn hình, thẩm mỹ hơn và mang đến sự tập trung cao hơn. Màn hình này cũng có khả năng hiển thị xuất sắc với độ phân giải Full HD, tấm nền IPS, cho độ sáng và độ phân giải cực cao. Bên cạnh màn hình, âm thanh của máy cũng rất được chú trọng với hệ thống âm thanh Dolby Atmos và công nghệ âm thanh vòm ảo, tạo ra âm thanh 3 chiều sống động.\nThời lượng pin siêu dài\nBạn có thể tự do sáng tạo, thoải mái làm việc quên thời gian ở bất cứ đâu mà không cần phải quan tâm đến nguồn sạc hay thời lượng pin. Đơn giản vì Lenovo Yoga Slim 7 có thể hoạt động trong thời gian 14 giờ liên tục, đủ để bạn sử dụng suốt cả ngày. Hơn nữa, máy còn có thể gia tăng thêm 15 – 20% thời lượng pin nhờ công nghệ Làm mát thông minh từ Intel. Đồng thời khả năng sạc nhanh Rapid Charge Pro giúp sạc được tới 80% pin chỉ sau 1 giờ đồng hồ, nhanh chóng nạp đầy năng lượng.\nLoạt tính năng thông minh, nâng cao trải nghiệm\nLenovo Yoga Slim 7 cho thấy sự thấu hiểu những điều bạn đang cần. Các cảm biến sẽ nhận ra sự vắng mặt của bạn để tiết kiệm pin hơn khi không sử dụng, đồng thời khi bạn quay lại laptop sẽ sẵn sàng ngay lập tức với tính năng nhận diện khuôn mặt. Chế độ làm mát thông minh giúp kéo dài thời lượng pin khi không có nguồn sạc bên cạnh. Ngoài ra trí tuệ nhân tạo cũng được áp dụng vào nhiều tác vụ khác để laptop luôn hoạt động nhanh chóng và mượt mà.\nHệ thống kết nối tiên tiến\nDù có thân máy siêu mỏng nhưng Lenovo Yoga Slim 7 vẫn tích hợp đầy đủ kết nối, hơn nữa đây đều là những kết nối tiên tiến hàng đầu. Bên cạnh các kết nối quen thuộc như 2 cổng USB 3.1 Gen 2, đầu đọc thẻ SD, cổng HDMI, giắc combo tai nghe/mic, Lenovo Yoga Slim 7 còn sở hữu cổng USB-C Thunderbolt đa năng, có thể xuất hình DisplayPort và cấp nguồn cho các thiết bị khác. Hệ thống kết nối đầy đủ giúp bạn dễ dàng sử dụng các thiết bị ngoại vi để phục vụ tối ưu cho công việc.\n', '6', '16', '512', '14.0\", 1920 x 1080 Pixel, IPS, 60 Hz, 300 nits, IPS LCD LED Backlit, True Tone', '1.36', 'Intel Core i5-1135G7', 24090000, 800, '2021-1-4');
 
-create table `laptop`.`CartProduct` (
-	`cartID` int(11) not null,
-    `productID` int(11) not null,
-    foreign key (`cartID`) references laptop.Cart(`cartID`),
+
+create table `laptop`.`Cart` (
+    `customerID` int(11) not null,
+	`productID` int(11) not null,
+    constraint PK_Cart primary key (`productID`,`customerID`),
+    foreign key (`customerID`) references laptop.Customer(`customerID`),
     foreign key (`productID`) references laptop.Product(`productID`)
 );
-INSERT INTO `laptop`.`CartProduct`
-(`cartID`, `productID`)
+INSERT INTO `laptop`.`Cart`
+(`customerID`, `productID`)
 VALUES
-(4, 19),	
-(4, 20), 
-(5, 15);
+(4, 3),
+(4, 10),
+(4, 37),
+(5, 6);
+
 
 create table `laptop`.`OrderProduct` (
 	`orderID` int(11) not null,

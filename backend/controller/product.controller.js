@@ -104,7 +104,10 @@ module.exports.postProduct = async function(req,res){
 		productSSD :req.body.productSSD,
 		productDisplay :req.body.productDisplay,
 		productWeight :req.body.productWeight,
-		productCPU : req.body.productCPU
+		productCPU : req.body.productCPU,
+		productSale : req.body.productSale,
+		productSold : req.body.productSold,
+		productDate : req.body.productDate
 	}
 	Product.create(product)
 	.then(data=>{res.status(200).send(data)})
@@ -154,7 +157,10 @@ module.exports.updateProduct = async function(req,res){
 		productSSD :req.body.productSSD,
 		productDisplay :req.body.productDisplay,
 		productWeight :req.body.productWeight,
-		productCPU : req.body.productCPU
+		productCPU : req.body.productCPU,
+		productSale : req.body.productSale,
+		productSold : req.body.productSold,
+		productDate : req.body.productDate
 		},{
 			where:{
 				productID : req.params.id
