@@ -72,3 +72,50 @@
   font-size: 12px;
   font-weight: bold;
 }
+
+.product-overlay {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content:space-around;
+}
+
+.product-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.icon-cart {
+  position: relative;
+  transition: .2s;
+  bottom: -55px;
+}
+
+.Product:hover .icon-cart {
+  transform: translateY(-70px);
+}
+
+.icon-wishlist {
+  transition: .5s;
+  position: relative;
+  bottom: -55px;
+}
+
+.Product:hover .icon-wishlist {
+  transform: translateY(-70px);
+}
+
+.icon-view {
+  transition: .8s;
+  position: relative;
+  bottom: -55px;
+}
+
+.Product:hover .icon-view {
+  transform: translateY(-70px);
+}
