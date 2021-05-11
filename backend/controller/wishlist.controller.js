@@ -2,7 +2,7 @@ const Wishlist = require('../models/wishlist.model');
 
 module.exports.getAllByUser = async function(req, res){
     var customerID = req.params.customerID;
-    Wishlist.findOne({
+    Wishlist.findAll({
         where:{
             customerID : customerID
         }
