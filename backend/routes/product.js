@@ -18,6 +18,7 @@ var upload = multer({
 router.get("/",controller.getAll);
 router.get('/filter',controller.filter);
 router.get('/:id',controller.getById);
+router.get('/attr/:attr',controller.getAllAttr)
 
 router.post('/deleted/:id',controller.deleteProduct);
 router.post('/create',upload.array("productImg",12),controller.postProduct)
