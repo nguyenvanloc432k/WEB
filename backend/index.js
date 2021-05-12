@@ -1,6 +1,8 @@
 const express = require('express');
 var bodyParser = require('body-parser');
 let multer = require('multer');
+const cors = require('cors');
+
 var Product = require('./routes/product');
 var Wishlist = require('./routes/wishlist');
 var Cart = require('./routes/cart');
@@ -17,6 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'))
 
+app.use(cors);
 
 // router
 app.use('/products',Product);
