@@ -4,7 +4,6 @@ import './Header.css'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCartPlus, faSearch} from "@fortawesome/free-solid-svg-icons";
 import React, {useState} from "react";
-import classNames from "classnames";
 import {faUser} from "@fortawesome/free-solid-svg-icons/faUser";
 
 function Header(props){

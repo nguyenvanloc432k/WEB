@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withRouter  } from 'react-router-dom';
 import './Banner.css';

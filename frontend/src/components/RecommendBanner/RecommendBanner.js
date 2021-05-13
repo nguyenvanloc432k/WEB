@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './RecommendBanner.css';
 import '../../App.css';
-import { Link } from 'react-router-dom';
 import b1 from '../../assets/b1.jpg';
 import b2 from '../../assets/b2.jpg';
 import b3 from '../../assets/b3.jpg';
