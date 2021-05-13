@@ -55,7 +55,7 @@ const Product = sequelize.define('Product',{
         allowNull : false
     },
     productDate: {
-        type : Sequelize.INTEGER,
+        type : Sequelize.DATE,
         allowNull : false
     }
 },{
