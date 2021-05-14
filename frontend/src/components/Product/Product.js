@@ -69,11 +69,11 @@ function Product(props) {
                 >
                     <img
                         className=""
-                        src={a} alt=""
+                        src={product.productImg} alt=""
                     ></img>
                     <img
                         className={hover === false ? "img-default hide" : "img-default"}
-                        src={b} alt=""
+                        src={product.productImg} alt=""
                     ></img>
 
                 </div>
