@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import '../../App.css';
-import Product from '../Product/Product';
+import './ProductList.css';
+import Product from "../Product/Product";
 
-export default function HomeTabContent(props) {
-    const [limit, setLimit] = useState(10)
+export default function ProductList(props) {
+    const [limit, setLimit] = useState(9)//10 san pham toi da
     const [loading, setLoading] = useState(false)
     const products = props.products
     const height = props.height
@@ -12,7 +12,7 @@ export default function HomeTabContent(props) {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-            setLimit(limit + 5);
+            setLimit(limit + 6);
         }, 1500);
     }
 
@@ -20,7 +20,7 @@ export default function HomeTabContent(props) {
 
     return(
         <div>
-            <div className="BestSeller" style= {{minHeight: `${height}px`}}>
+            <div className="best-seller" style= {{minHeight: `${height}px`}}>
                 {
                     limitProducts.map((item, index) => {
                         return (
@@ -40,24 +40,24 @@ export default function HomeTabContent(props) {
                         textTransform: 'capitalize',
                         marginTop: '150px'
                     }}>
-                        there's nothing here yet
+                        There's nothing here yet
                     </div>
                 }
             </div>
             {
                 (products.length > 10 && products.length >= limit) &&
-                <div className="tab-loadmore flex-center">
+                <div className="tab-filter flex-center">
                     <div
-                    className="tab-loadmore-btn btn"
-                    onClick={handleClick}
+                        className="tab-filter-btn btn"
+                        onClick={handleClick}
                     >
                         Load More
                     </div>
                     {
-                    loading === true &&
-                    <div className="tab-loadmore-btn tab-loadmore-loading btn-nothover">
-                        <div className="loading-icon"></div>
-                    </div>
+                        loading === true &&
+                        <div className="tab-filter-btn tab-filter-loading btn-not-hover">
+                            <div className="loading-icon"></div>
+                        </div>
                     }
                 </div>
             }
