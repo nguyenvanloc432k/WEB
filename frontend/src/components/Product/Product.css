@@ -3,14 +3,22 @@
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
+
 .Product {
+  width: calc(20% - 30px);
+  margin: 15px 15px 20px 15px;
+  text-align: center;
+  height: calc(25vw);
+}
+
+.ProductForFilterPage{
   width: calc(33% - 30px);
   margin: 15px 15px 20px 15px;
   text-align: center;
-  height: 350px;
+  height: calc(25vw);
 }
 .product-img {
-  height: calc(350px - 68px);
+  height: calc(25vw - 68px);
   position: relative;
 }
 .product-tag {

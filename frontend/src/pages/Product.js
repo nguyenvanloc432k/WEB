@@ -1,21 +1,21 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Header from "../components/Header/Header";
 import RecommendBanner from "../components/RecommendBanner/RecommendBanner";
-import ProductFilter from "../components/Filter/ProductFilter";
 import Footer from "../components/Footer/Footer";
 import Newsletter from "../components/NewsLetter/NewsLetter";
-import HomeTab from "../components/HomeTab/HomeTab";
-import HomeTabContent from "../components/HomeTab/HomeTabContent";
+import ProductFilter from "../components/Filter/ProductFilter";
+import Banner from "../components/Banner/Banner";
 export default function Product(){
-
+    const [collection, setCollection] = useState([])
+    useEffect(() => {
+        document.body.style.overflow = 'unset'; // chua biet de lam gi
+    }, [])
     return (
-        <div>
+        <div className="">
             <Header/>
+            <Banner collection = {collection}/>
             <RecommendBanner/>
-            {/*<HomeTab/>*/}
-            {/*<HomeTabContent/>*/}
-            <ProductFilter
-            />
+            <ProductFilter/>
             <Newsletter/>
             <Footer/>
         </div>

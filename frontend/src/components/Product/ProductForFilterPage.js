@@ -6,7 +6,7 @@ import {withRouter} from 'react-router-dom'
 import a from "../../images/e1e5625dfdf7a348d12bbabe915b842a"
 import b from "../../images/75d77a60dd07209eb9a9128b54f40fa7"
 
-function Product(props) {
+function ProductForFilterPage(props) {
     const [hover, setHover] = useState(false)   //để css
     const [view, setView] = useState(false) //
     const product = props.product
@@ -33,7 +33,7 @@ function Product(props) {
 
     return (
         <div
-            className="Product"
+            className="ProductForFilterPage"
         >
             {/* <ProductQuickView
                 view={view}
@@ -108,4 +108,4 @@ function Product(props) {
     )
 
 }
-export default withRouter(Product)
+export default withRouter(ProductForFilterPage)

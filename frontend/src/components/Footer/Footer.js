@@ -1,25 +1,17 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faTwitter, faInstagram, faPinterest, faGoogle } from '@fortawesome/free-brands-svg-icons';
-// import { Link } from 'react-router-dom'
 import './Footer.css'
 
 
 
 export default function Footer() {
-
-    const handleClick = () => {
-        window.scrollTo(0, 0) // dich chuyen ngag
-    }
-
     return (
         <div className="Footer">
             <div className="footer-container">
                 <div className="footer-left">
-                    <p className="cr">©2016 Sober</p>
-                    {/*<Link to="/news" onClick={handleClick}>News</Link>*/}
-                    <a href="/contact" onClick={handleClick}>FAQs</a>
-                    {/*<Link to="/contact" onClick={handleClick}>Contact us</Link>*/}
+                    <p className="cr">©2021 Sober</p>
+                    <a href="/contact">FAQs</a>
                 </div>
                 <div className="footer-right">
                     <FontAwesomeIcon icon={faTwitter} className="cart-icon-footer" />
