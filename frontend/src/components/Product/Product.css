@@ -4,13 +4,13 @@
   margin-bottom: 20px;
 }
 .Product {
-  width: calc(33% - 30px);
+  width: calc(25% - 30px);
   margin: 15px 15px 20px 15px;
   text-align: center;
-  height: 350px;
+  height: 25vm;
 }
 .product-img {
-  height: calc(350px - 68px);
+  height: calc(25vm  - 68px);
   position: relative;
 }
 .product-tag {

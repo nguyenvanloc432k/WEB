@@ -7,12 +7,28 @@ class ProductFilter extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
+            filterRamList: [
+                {
+                    ramId: 4+100,
+                    ramName: "4 GB",
+                },
+                {
+                    ramId: 8+100,
+                    ramName: "8 GB"
+                }
+            ],
             filterBrandList : [],
             productList : [],
             activeFilter : []
         }
     }
 
+
+    //chu ys:
+    //0 < brandid < 100
+    //100 < ramid < 1000
+    //1000 < ssd id < 10000
+    //10000 < cpu id < 10100
     async componentDidMount(){
         await fetch("http://localhost:4000/brand")
             .then(res => res.json())
@@ -29,42 +45,56 @@ class ProductFilter extends PureComponent {
     }
 
     onFilterBrandChange(filter) {
-        const { filterBrandList, activeFilter } = this.state;
-        if (filter === "ALL") {
-            if (activeFilter.length === filterBrandList.length) {
-                this.setState({ activeFilter: [] });
-            } else {
-                this.setState({ activeFilter: filterBrandList.map(filter => filter.brandID) });
-            }
+        const {activeFilter } = this.state;
+        if (activeFilter.includes(filter)) {
+            const filterIndex = activeFilter.indexOf(filter);
+            const newFilter = [...activeFilter];
+            newFilter.splice(filterIndex, 1);
+            this.setState({ activeFilter: newFilter });
         } else {
-            if (activeFilter.includes(filter)) {
-                const filterIndex = activeFilter.indexOf(filter);
-                const newFilter = [...activeFilter];
-                newFilter.splice(filterIndex, 1);
-                this.setState({ activeFilter: newFilter });
-            } else {
-                this.setState({ activeFilter: [...activeFilter, filter] });
-            }
+            this.setState({ activeFilter: [...activeFilter, filter] });
         }
     }
 
     render() {
-        const { filterBrandList, activeFilter, productList } = this.state;
-        let filteredList;
-        if (
-            activeFilter.length === 0 ||
-            activeFilter.length === filterBrandList.length
-        ) {
-            filteredList = productList;
-        } else {
-            filteredList = productList.filter(item =>
-                activeFilter.includes(item.brandID)
-            );
+        const { filterRamList,filterBrandList, activeFilter, productList } = this.state;
+        let filteredList = productList; //day la list da tim kiem hoan tat
+        if(activeFilter.length > 0){ //neu co 1 filter trong active filter
+            let activeBrandFilter = activeFilter.filter(i => (
+                i > 0 && i < 100
+            )) //cac id cua brandfilter
+
+            let activeRamFilter = activeFilter.filter(i => (
+                i > 100 && i < 1000
+            )) //cac id cua ram filter
+
+            if(activeBrandFilter.length > 0){ // neu co >= 1 filter brand thi se loc; neu khong co coi nhu loc tat ca brand
+                filteredList = filteredList.filter(item =>
+                    (
+                        productList.filter(item => activeFilter.includes(item.brandID))
+                            .includes(item)
+                    )
+                )
+            }
+            if(activeRamFilter.length > 0){
+                filteredList = filteredList.filter(item =>
+                    (
+                        productList.filter(item => activeFilter.includes(item.productRAM + 100))
+                            .includes(item)
+                    )
+                )
+            }
         }
-        let filterBrandflow = filterBrandList.filter(filter => (
-            activeFilter.includes(filter.brandID)
-        ))
-        console.log(filterBrandflow)
+
+        let filterflow = filterBrandList.filter(filter => (
+                activeFilter.includes(filter.brandID)
+            )
+        ).concat(
+            filterRamList.filter(filterR => (
+                    activeFilter.includes(filterR.ramId)
+                )
+            )
+        )
         return (
             <div className="Product-Filter">
                 <div className="col-3 p-0 p-r-30">
@@ -83,6 +113,23 @@ class ProductFilter extends PureComponent {
                             </div>
                         ))}
                     </div>
+                    <br/>
+                    <br/>
+                    <div className="filter-title">Dung lượng RAM</div>
+                    <div className="filter-list">
+                        {filterRamList.map(filter => (
+                            <div className="filter-items">
+                                <input
+                                    className="input-filter"
+                                    id={filter.ramId}
+                                    type="checkbox"
+                                    defaultChecked={activeFilter.includes(filter.ramId)}
+                                    onClick={() => this.onFilterBrandChange(filter.ramId)}
+                                />
+                                <label htmlFor={filter.ramId} className="label-filer">{filter.ramName}</label>
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 <div className="col-9">
                     <div className="product-filter-header">
@@ -97,9 +144,9 @@ class ProductFilter extends PureComponent {
                             <div className="product-filter-header-setflex">
                                 <span className="span-title">Lọc theo:</span>
                                 {
-                                    filterBrandflow.map(filter => (
-                                        <span className="span-title span-title-filterflow" key={filter.brandID}>
-                                            {filter.brandName}
+                                    filterflow.map((filter,index) => (
+                                        <span className="span-title span-title-filterflow" key={index}>
+                                            {filter.brandName}{filter.ramName}
                                         </span>
                                     ))
                                 }

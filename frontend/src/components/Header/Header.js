@@ -36,9 +36,9 @@ function Header(props){
                     <li><a href="/about">About</a></li>
                 </ul>
             </div>
-            <div className="logo flex-center">
-                BK LAPTOP
-            </div>
+            {/*<div className="logo flex-center">*/}
+            {/*    BK LAPTOP*/}
+            {/*</div>*/}
             <div>
                 <ul className="menu">
                     {/*icon search*/}
