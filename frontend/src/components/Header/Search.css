@@ -67,3 +67,29 @@
 .fadeIn {
     animation: fadeIn .5s;
 }
+
+.search-item {
+  border-top: 1px #eee solid;
+  height: 100px;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.search-item:last-child {
+  border-bottom: 1px #eee solid;
+}
+.search-item-img {
+  height: 100%;
+}
+.search-item-body {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+.button {
+  color: white;
+  background-color: #111;
+  cursor: pointer;
+  padding: 10px 20px;
+}
