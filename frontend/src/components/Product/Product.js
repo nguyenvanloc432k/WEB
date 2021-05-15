@@ -24,7 +24,7 @@ function Product(props) {
 
     const redirect = () => {    // sự kiện chuột, chuyển hướng trang đến /products/:id
         window.scrollTo(0,0)
-        props.history.push(`/products/${product._id.$oid}`);
+        props.history.push(`/products/${product.id}`);
     }
 
     let productDate = new Date(product.productDate)
