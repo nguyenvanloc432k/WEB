@@ -24,9 +24,9 @@
 .filter-title{
     text-align: left;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 650;
     line-height: 1;
-    color: #212529;
+    color: #23232c;
     margin-bottom: 21px;
 }
 .filter-list{
@@ -48,6 +48,9 @@
 .label-filter{
     cursor: pointer;
     font-size: 14px;
+    font-weight: 400;
+    vertical-align: baseline;
+    background: 0 0
 }
 .input-filter{
     display: inline-block;
