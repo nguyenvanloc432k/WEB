@@ -3,7 +3,6 @@ const sequelize = require('./connection');
 
 //let Customer = require('./customer.model');
 let Product = require('./product.model');
-let CartProduct = require('./cart_product.model');
 
 const Cart = sequelize.define('Cart', {
     customerID : {
