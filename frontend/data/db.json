@@ -1,20 +1,22 @@
 {
     "products": [
         {
+            "id": "1",
             "_id": {
                 "$oid": "5f997926624444cc7d7942b1"
             },
             "productImg": [
-                "http://localhost:4000/images/e1e5625dfdf7a348d12bbabe915b842a",
-                "http://localhost:4000/images/75d77a60dd07209eb9a9128b54f40fa7",
-                "http://localhost:4000/images/82d1b057c29ffa52f2b6913551a543a2",
-                "http://localhost:4000/images/df711e1409bcaa6a987145552d529810"
+                "https://laptop88.vn/media/product/3974_dell_latitude_e5470_5.png",
+                "https://laptop88.vn/media/product/3974_dell_latitude_e5470_4.png",
+                "https://laptop88.vn/media/product/3974_dsc04883__1__min.jpg",
+                "https://laptop88.vn/media/product/3974_dsc04882_min.jpg"
             ],
             "productSize": [
                 "Small",
                 "Medium",
                 "Large"
             ],
+            "productFinalPrice": 120000,
             "productVote": [
                 {
                     "ratingName": "Dương Bảo Nam",
@@ -60,7 +62,7 @@
             "ratingImg": [],
             "productName": "Stretch Jersey Corset Dress",
             "productSale": 30,
-            "productPrice": 1290000,
+            "productPrice": 120000,
             "productCate": "dress",
             "productSex": "Woman",
             "productDate": {
@@ -70,6 +72,7 @@
             "productSold": 0
         },
         {
+            "id": "2",
             "_id": {
                 "$oid": "5fa67125f91457b89f0444e5"
             },
@@ -115,6 +118,7 @@
             "productSold": 0
         },
         {
+            "id": "3",
             "_id": {
                 "$oid": "5fa67181f91457b89f04450b"
             },
@@ -152,6 +156,7 @@
             "productSold": 0
         },
         {
+            "id": "4",
             "_id": {
                 "$oid": "5fa67192f91457b89f04451a"
             },
@@ -180,6 +185,7 @@
             "productSold": 0
         },
         {
+            "id": "5",
             "_id": {
                 "$oid": "5fa6719cf91457b89f044521"
             },
@@ -217,6 +223,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fa671a6f91457b89f044529"
             },
@@ -261,6 +268,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fa671adf91457b89f04452d"
             },
@@ -289,6 +297,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fa671bef91457b89f044534"
             },
@@ -317,6 +326,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fa671d4f91457b89f044541"
             },
@@ -345,6 +355,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fa671d4f91457b89f044544"
             },
@@ -372,6 +383,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fabf6c6f91457b89f05082f"
             },
@@ -401,6 +413,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb675ab993d7574061e67b4"
             },
@@ -426,6 +439,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb675fa993d7574061e67b5"
             },
@@ -451,6 +465,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb67676993d7574061e67b6"
             },
@@ -477,6 +492,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb6771e993d7574061e67b7"
             },
@@ -502,6 +518,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb67771993d7574061e67b8"
             },
@@ -527,6 +544,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb68030993d7574061e67bb"
             },
@@ -553,6 +571,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb680b5993d7574061e67bc"
             },
@@ -579,6 +598,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb68163993d7574061e67bd"
             },
@@ -605,6 +625,7 @@
             "productSold": 0
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb68216993d7574061e67be"
             },
@@ -633,6 +654,7 @@
     ],
     "collection": [
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb671559d75ce72aca65eb1"
             },
@@ -657,6 +679,7 @@
             }
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb672d6993d7574061e67b3"
             },
@@ -681,6 +704,7 @@
             }
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb67abd993d7574061e67b9"
             },
@@ -711,6 +735,7 @@
             }
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb67cba993d7574061e67ba"
             },
@@ -735,6 +760,7 @@
             }
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb671559d75ce72aca65eb1"
             },
@@ -759,6 +785,7 @@
             }
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb672d6993d7574061e67b3"
             },
@@ -783,6 +810,7 @@
             }
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb67abd993d7574061e67b9"
             },
@@ -813,6 +841,7 @@
             }
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5fb67cba993d7574061e67ba"
             },
@@ -839,30 +868,35 @@
     ],
     "category": [
         {
+            "id": 1,
             "_id": {
                 "$oid": "5f92edad624444cc7d780d42"
             },
             "cateName": "jacket"
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5f93d69468e7681c510a39b9"
             },
             "cateName": "accessories"
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5f93d76e68e7681c510a39bd"
             },
             "cateName": "bags"
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5f9438ea3ac4a834abce965d"
             },
             "cateName": "new"
         },
         {
+            "id": 1,
             "_id": {
                 "$oid": "5f97c6ddccc0ee707904256d"
             },
