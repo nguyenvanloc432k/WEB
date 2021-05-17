@@ -91,6 +91,19 @@ class ProductFilter extends PureComponent {
                 ssdlist[ssdTBindex].ssdName = 1+" TB"
                 this.setState({filterSsdList: ssdlist})
             })
+        //lấy các loại cpu
+        await fetch("http://localhost:4000/products/attr/CPU")
+            .then(res=>res.json())
+            .then((cpu) => {
+                let cpulist = cpu.map(function (CPU,index){
+                    return {
+                        cpuId: index + 10001,
+                        cpuName: CPU
+                    }
+                })
+                this.setState({filterCpuList: cpulist})
+                console.log(cpulist)
+            })
     }
 
     onFilterBrandChange(filter) {
@@ -106,7 +119,7 @@ class ProductFilter extends PureComponent {
     }
 
     render() {
-        const {filterPriceList, filterSsdList,filterRamList,filterBrandList, activeFilter, productList } = this.state;
+        const {filterCpuList,filterPriceList, filterSsdList,filterRamList,filterBrandList, activeFilter, productList } = this.state;
         let filteredList = productList; //day la list da tim kiem hoan tat
         if(activeFilter.length > 0){ //neu co 1 filter trong active filter
             let activeBrandFilter = activeFilter.filter(i => (
@@ -124,6 +137,10 @@ class ProductFilter extends PureComponent {
             let activePriceFilter = activeFilter.filter(i => (
                 i.priceId > 100000 && i.priceId < 1000000
             )) //cac id cua price filter
+
+            let activeCpuFilter = activeFilter.filter(i => (
+                i.cpuId > 10000 && i.cpuId < 100000
+            )) //cac id cua cpu filter
 
             if(activeBrandFilter.length > 0){ // neu co >= 1 filter brand thi se loc; neu khong co coi nhu loc tat ca brand
                 filteredList = filteredList.filter(item =>
@@ -167,6 +184,23 @@ class ProductFilter extends PureComponent {
                 )
             }
 
+            if(activeCpuFilter.length > 0){
+                filteredList = filteredList.filter(item =>
+                    (
+                        productList.filter(
+                            item => (
+                                activeCpuFilter.some(
+                                    (cpu) => (
+                                        cpu.cpuName === item.productCPU
+                                    )
+                                )
+                            )
+                        )
+                            .includes(item)
+                    )
+                )
+            }
+
 
         }
 
@@ -188,6 +222,10 @@ class ProductFilter extends PureComponent {
                 activeFilter.includes(filterP)
             )
         )
+        ).concat(
+            filterCpuList.filter(filterC => (
+                activeFilter.includes(filterC)
+            ))
         )
         return (
             <div className="Product-Filter">
@@ -258,6 +296,23 @@ class ProductFilter extends PureComponent {
                             </div>
                         ))}
                     </div>
+                    <br/>
+                    <br/>
+                    <div className="filter-title">Vi xử lí</div>
+                    <div className="filter-list">
+                        {filterCpuList.map(filter => (
+                            <div className="filter-items-cpu">
+                                <input
+                                    className="input-filter"
+                                    id={filter.cpuId}
+                                    type="checkbox"
+                                    defaultChecked={activeFilter.includes(filter)}
+                                    onClick={() => this.onFilterBrandChange(filter)}
+                                />
+                                <label htmlFor={filter.cpuId} className="label-filter">{filter.cpuName}</label>
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 <div className="col-9">
                     <div className="product-filter-header">
@@ -274,7 +329,7 @@ class ProductFilter extends PureComponent {
                                 {
                                     filterflow.map((filter,index) => (
                                         <span className="span-title span-title-filterflow" key={index}>
-                                            {filter.brandName}{filter.ramName}{filter.ssdName}{filter.priceName}
+                                            {filter.brandName}{filter.ramName}{filter.ssdName}{filter.priceName}{filter.cpuName}
                                         </span>
                                     ))
                                 }

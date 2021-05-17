@@ -41,20 +41,24 @@
 }
 .filter-items{
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
     width: 50%;
 }
+.filter-items-cpu{
+    display: flex;
+    align-items: center;
+    width: 60%;
+
+}
 .label-filter{
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 400;
-    vertical-align: baseline;
-    background: 0 0
+    font-size: 15px;
+    font-weight: 450;
+    background: 0 0;
+    display: inline-block;
 }
 .input-filter{
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
     width: 16px;
     height: 16px;
     border-radius: 4px;

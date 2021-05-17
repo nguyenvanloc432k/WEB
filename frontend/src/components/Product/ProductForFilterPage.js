@@ -3,8 +3,6 @@ import '../../App.css'
 import './Product.css'
 import ProductOverlay from './ProductOverlay'
 import {withRouter} from 'react-router-dom'
-import a from "../../images/e1e5625dfdf7a348d12bbabe915b842a"
-import b from "../../images/75d77a60dd07209eb9a9128b54f40fa7"
 
 function ProductForFilterPage(props) {
     const [hover, setHover] = useState(false)   //để css
@@ -24,7 +22,7 @@ function ProductForFilterPage(props) {
 
     const redirect = () => {    // sự kiện chuột, chuyển hướng trang đến /products/:id
         window.scrollTo(0,0)
-        props.history.push(`/products/${product.id}`);
+        props.history.push(`/products/${product.productID}`);
     }
 
     let productDate = new Date(product.productDate)
