@@ -1,6 +1,5 @@
 const Cart = require('../models/cart.model');
 const Product = require('../models/product.model');
-const CartProduct = require('../models/cart_product.model');
 
 module.exports.getAllByUser = async function(req, res){
     var customerID = req.params.customerID;

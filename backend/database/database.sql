@@ -220,7 +220,7 @@ Cổng kết nối Thunderbolt 3 trên MacBook Air 13 2020 kết hợp băng th�
 
 Tốc độ băng thông lên tới 40Gb/s, gấp đôi Thunderbolt 2 cùng khả năng cắm được ở bất cứ chiều nào giúp Thunderbolt 3 đáp ứng hoàn hảo mọi nhu cầu của ban.', '5', '8', '512', '13.3", 2560 x 1600 Pixel, IPS, Đang cập nhật, Đang cập nhật, IPS LCD LED Backlit, True Tone', '1.29', 'Intel Core i5-10th-gen 1.10 GHz', 33990000, 95, '2021-1-31');
 
-insert into `laptop`.`Product` values ('7', 'MacBook Air 13" 2017', '19990000', 0, 'http://localhost:4000/images/636688207026676028_macbookair-1_Nu0WnLx.jpg', 'Macbook Air 13 128 GB MQD32SA/A (2017) với thiết kế không thay đổi, vỏ nhôm sang trọng, siêu mỏng và siêu nhẹ, hiệu năng được nâng cấp, thời lượng pin cực lâu, phù hợp cho nhu cầu làm việc văn phòng nhẹ nhàng, không cần quá chú trọng vào hiển thị của màn hình.
+insert into `laptop`.`Product` values ('7', 'MacBook Air 13" 2017', '19990000', 0, 'http://localhost:4000/images/apple-macbook-air-mqd32sa-a-i5-5350u-600x600.jpg', 'Macbook Air 13 128 GB MQD32SA/A (2017) với thiết kế không thay đổi, vỏ nhôm sang trọng, siêu mỏng và siêu nhẹ, hiệu năng được nâng cấp, thời lượng pin cực lâu, phù hợp cho nhu cầu làm việc văn phòng nhẹ nhàng, không cần quá chú trọng vào hiển thị của màn hình.
 
  
 
@@ -268,7 +268,7 @@ Laptop HP 14 ce3015TU có sẵn 4GB RAM DDR4, cho phép mở nhiều ứng dụn
 Bản lề nâng tiện lợi
 Bên cạnh kiểu dáng thanh lịch ấn tượng, HP Pavilion 14-ce3015TU còn có thiết kế bản lề nâng độc đáo. Khi bạn mở máy, một phần bản lề sẽ nâng nhẹ thân máy lên, giúp gõ phím tự nhiên hơn và tản nhiệt tốt hơn. Đồng thời một phần viền màn hình cạnh dưới cũng được giấu đi, mang tới trải nghiệm hình ảnh tuyệt vời.', '4', '4', '512', '14.0", 1920 x 1080 Pixel, Đang cập nhật, 60 Hz, Đang cập nhật, LED-backlit', '1.53', 'Intel Core i3-1005G1 1.20 GHz', 13790000, 800, '2021-4-9');
 
-insert into `laptop`.`Product` values ('9', 'Laptop HP ENVY 13 ba0046TU', '23390000', '20', 'http://localhost:4000/images/637320742814213728_hp-envy-13-ba0046tu-vang-1_DeM88Zc.png', 'Chiếc máy tính xách tay siêu di động, cao cấp và mang trên mình sức mạnh đáng nể, HP ENVY 13 ba0046TU cho phép bạn thỏa sức sáng tạo mọi lúc mọi nơi.
+insert into `laptop`.`Product` values ('9', 'Laptop HP ENVY 13 ba0046TU', '23390000', '20', 'http://localhost:4000/images/hp-envy-13-ba0046tu-i5-171m7pa-225859-600x600.jpg', 'Chiếc máy tính xách tay siêu di động, cao cấp và mang trên mình sức mạnh đáng nể, HP ENVY 13 ba0046TU cho phép bạn thỏa sức sáng tạo mọi lúc mọi nơi.
 
 Vẻ đẹp sang trọng, thu hút mọi ánh nhìn
 HP Envy 13 nhanh chóng mê hoặc người dùng chỉ sau cái nhìn đầu tiên. Màn hình không viền tinh tế, thân máy mỏng cứng cáp, trọng lượng siêu nhẹ chỉ chưa đến 1,3 kg tạo nên một chiếc máy tính xách tay đẹp tuyệt mỹ, vô cùng năng động khi bạn dễ dàng mang đi như một cuốn sách. HP Envy 13 ba0046TU không đơn thuần là một phương tiện phục vụ công việc, nó còn là một kiệt tác thời trang hấp dẫn.
@@ -439,7 +439,7 @@ Không chỉ kết nối có dây mà kết nối không dây của ASUS Expertb
 Bàn phím chưa bao giờ thú vị đến thế
 Để người dùng có được trải nghiệm tốt nhất, từng chi tiết nhỏ trên laptop ASUS Expertbook B9450FA-BM0616R đều được tối ưu hoàn hảo. Bàn phím thiết kế tinh tế, có đèn nền cho cảm giác gõ nhẹ nhàng, làm việc được cả trong đêm tối; phím số Numpad sẽ xuất hiện đầy thông minh trên khu vực Touchpad, giúp bạn nhập liệu nhanh chóng khi cần tính toán. Hơn nữa, ASUS Expertbook B9450FA BM0616R cũng được chế tác dạng bản lề ErgoLift thông minh, tự động nâng laptop lên một góc nghiêng nhỏ để cảm giác gõ thoải mái nhất.', '3', '16', '512', '14.0", 1920 x 1080 Pixels, IPS FHD', '0.996', 'i7 10510U 1.8GHz', 0, 100, '2021-7-8');
 
-insert into `laptop`.`Product` values ('15', 'Laptop Asus ZenBook Duo UX481FL BM048T', '30990000', '0', 'http://localhost:4000/images/637234211788755681_asus-tuf-fx505gt-xam-1_zyYojZW.png', 'Asus ZenBook Duo UX481FL là chiếc laptop có thiết kế đặc biệt mà bạn chưa từng nhìn thấy trước đây. Với hai màn hình độc đáo trên một thân máy cao cấp, ZenBook Duo UX481FL dường như là chiếc máy tính xách tay đến từ tương lai.
+insert into `laptop`.`Product` values ('15', 'Laptop Asus ZenBook Duo UX481FL BM048T', '30990000', '0', 'http://localhost:4000/images/asus-zenbook-duo-ux481f-i5-10210u-8gb-512gb-2gb-mx-600x600.jpg', 'Asus ZenBook Duo UX481FL là chiếc laptop có thiết kế đặc biệt mà bạn chưa từng nhìn thấy trước đây. Với hai màn hình độc đáo trên một thân máy cao cấp, ZenBook Duo UX481FL dường như là chiếc máy tính xách tay đến từ tương lai.
 
 Định nghĩa lại phong cách thiết kế
 Ngay từ màu sắc, Asus ZenBook Duo UX481FL dường như đã định nghĩa lại về một phong cách thiết kế hoàn toàn mới. Laptop có màu Lam vũ trụ đặc biệt, bóng bẩy sang trọng và mang đến một vẻ đẹp rất lạ. Trên thân máy được trang trí bởi các đường vân kim loại đồng tâm đặc trưng của dòng ZenBook. Các cạnh viền đều được cắt kim cương sắc sảo, tạo nên cảm giác cao cấp ở mọi vị trí. Tuy nhiên sự độc đáo và khác biệt nhất phải nói đến ở đây là bạn sẽ được chiêm ngưỡng chiếc laptop hai màn hình với kiểu dáng ngỡ như đến từ tương lai.
@@ -731,3 +731,44 @@ VALUES
 (1, 9),
 (1, 2),
 (2, 18);
+
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i9' WHERE (`productID` = '1');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i3' WHERE (`productID` = '2');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i3' WHERE (`productID` = '3');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i7' WHERE (`productID` = '4');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '5');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '6');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '7');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i3' WHERE (`productID` = '8');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '9');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '10');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i3' WHERE (`productID` = '11');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '12');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '13');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i7' WHERE (`productID` = '14');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '15');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i3' WHERE (`productID` = '16');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '17');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '18');
+UPDATE `laptop`.`Product` SET `productCPU` = 'AMD Ryzen 7' WHERE (`productID` = '19');
+UPDATE `laptop`.`Product` SET `productCPU` = 'AMD Ryzen 7' WHERE (`productID` = '20');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '21');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '22');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '23');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '24');
+UPDATE `laptop`.`Product` SET `productCPU` = 'AMD Ryzen 3' WHERE (`productID` = '25');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '26');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '27');
+UPDATE `laptop`.`Product` SET `productCPU` = 'AMD Ryzen 3' WHERE (`productID` = '30');
+UPDATE `laptop`.`Product` SET `productCPU` = 'AMD Ryzen 5' WHERE (`productID` = '31');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '32');
+UPDATE `laptop`.`Product` SET `productCPU` = 'AMD Ryzen 3' WHERE (`productID` = '33');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '34');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '35');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i7' WHERE (`productID` = '36');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '37');
+UPDATE `laptop`.`Product` SET `productCPU` = 'AMD Ryzen 3' WHERE (`productID` = '38');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i3' WHERE (`productID` = '39');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i3' WHERE (`productID` = '40');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '41');
+UPDATE `laptop`.`Product` SET `productCPU` = 'Intel Core i5' WHERE (`productID` = '42');
