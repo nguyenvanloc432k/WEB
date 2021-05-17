@@ -29,7 +29,7 @@ function ProductOverlay(props) {
 
     const redirect = (event) => {
         if (event.target.id === "overlay") {
-            props.history.push(`/products/${props.product._id}`);
+            props.history.push(`/product/${props.product.productID}`);
         }
     }
 
