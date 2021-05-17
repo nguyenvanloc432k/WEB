@@ -144,3 +144,12 @@
   justify-content: center;
   align-items: center;
 }
+
+.product-info-line {
+  margin-top: 20px;
+  background-color: #eee;
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  margin: 40px 0;
+}

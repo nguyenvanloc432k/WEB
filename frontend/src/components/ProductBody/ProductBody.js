@@ -184,7 +184,6 @@ const ProductBody = (props) => {
                                     <p>Add to cart</p>
                                 </div>
                             }
-
                         {/* <div className="product-info-line"></div>
                         <div className="product-info-cate flex">
                             <p>Category:</p>
@@ -192,12 +191,13 @@ const ProductBody = (props) => {
                         </div>
                         <div className="product-info-line"></div> */}
                     </div>
+                        <div className="product-info-line"></div>
 
 
                 </div>
 
             </div>
-
+            <div className="product-info-line"></div>            
 
         </div>
     );
