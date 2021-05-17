@@ -22,7 +22,7 @@ function Search(props) {
         const value = event.target.value
         const search = []
         for (let i in constProducts) {
-            if ((constProducts[i].productName).toLowerCase().includes(value.toLowerCase())) {
+            if ((constProducts[i].productDescription).toLowerCase().includes(value.toLowerCase())) {
                 search.push(constProducts[i])
             }
         }
@@ -36,7 +36,7 @@ function Search(props) {
 
     return (
         <div class={props.searchOpen === true ? 'Search' : 'Search displayNone'}>
-           
+
             <div className="search-header">
                 <div className="search-title">Search</div>
                 <div
@@ -74,8 +74,8 @@ function Search(props) {
                                         </div>
                                         <div className="item-view">
                                             <div className="button"
-                                                id={item.productID}
-                                                onClick={handleClick}
+                                                 id={item.productID}
+                                                 onClick={handleClick}
                                             >
                                                 VIEW
                                             </div>
