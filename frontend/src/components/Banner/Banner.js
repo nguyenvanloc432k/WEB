@@ -49,7 +49,6 @@ function Banner(props) {
                     </div>
                     {collection.length > 0 &&
                         <div className="flex-center">
-                            
                                 <div
                                     id={collection[7]._id}
                                     onClick={redirect}

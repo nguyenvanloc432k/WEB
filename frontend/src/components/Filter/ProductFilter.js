@@ -1,6 +1,5 @@
 import React, {PureComponent} from "react";
 import "./ProductFilter.css";
-import HomeTabContent from "../HomeTab/HomeTabContent";
 import ProductList from "./ProductList";
 
 class ProductFilter extends PureComponent {

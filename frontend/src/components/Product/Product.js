@@ -3,8 +3,7 @@ import '../../App.css'
 import './Product.css'
 import ProductOverlay from './ProductOverlay'
 import {withRouter} from 'react-router-dom'
-import a from "../../images/e1e5625dfdf7a348d12bbabe915b842a"
-import b from "../../images/75d77a60dd07209eb9a9128b54f40fa7"
+
 
 function Product(props) {
     const [hover, setHover] = useState(false)   //để css
