@@ -1,0 +1,33 @@
+.container {
+    display: grid;
+    grid-template-columns: 100px auto 20% 15% 15%;
+    row-gap: 20px;
+    column-gap: 20px;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+.field {
+    font-size: 24px;
+    font-weight: 400px;
+    justify-self: start;
+}
+.item {
+    justify-self: start;
+    align-self: center;
+}
+.count {
+    padding: 10px;
+    width: 50px;
+    font-size: 1em;
+    text-align: center;
+}
+.counter {
+    display: flex;
+    align-items: center;
+}
+.down,.up {
+    margin: 0 10px;
+}
+.down:hover, .up:hover {
+    cursor: pointer;
+}

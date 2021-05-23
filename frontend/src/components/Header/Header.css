@@ -13,9 +13,6 @@
     transition: .4s ease-in-out;
 }
 .menu {
-    list-style-type: none;
-    grid-column: 1/4;
-    justify-content: flex-start;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +35,9 @@ li a {
     color: white;
     text-decoration: none;
 }
-
+li div {
+    margin-left: 20px;
+}
 .header div:nth-child(1) li a::after {
     position: absolute;
     content: "";
@@ -62,23 +61,13 @@ li a {
 .header a:hover{
     color: black;
 }
-.cart-icon{
-    padding-left: 15px;
-}
 
-.personal-icon{
-    padding-left: 15px;
-}
-
-.search-icon {
+.personal-icon,.wishlist-icon,.search-icon,.cart-icon{
     color: white;
 }
-.search-icon:hover {
+
+.personal-icon:hover,.search-icon:hover,.cart-icon:hover,.wishlist-icon:hover{
     cursor: pointer;
     color: black
 }
 
-/*.logo {*/
-/*    color: white;*/
-/*    font-size: 30px;*/
-/*}*/
