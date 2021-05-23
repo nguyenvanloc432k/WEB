@@ -168,6 +168,7 @@
 .product-info-cart {
     height: 60px;
     align-items: center;
+    
 }
 
 .count-cart {
@@ -177,6 +178,7 @@
     border: 1px solid #ddd;
     color: #777;
     transition: 0.5s;
+    padding: 10px 10px;
 }
 
 .count-cart:hover {
@@ -218,9 +220,18 @@
 }
 
 .product-info-addtocart {
+    background: #f5f5f5;
     margin: 0 15px;
     height: 100%;
     padding: 0 20px;
     cursor: pointer;
-    width: 160px;
+    width: 200px;
+}
+
+.product-info-addtocart p {
+    margin-left: 20px;
+}
+
+.product-info-addtocart FontAwesomeIcon {
+    margin-left: 20px;
 }

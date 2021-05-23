@@ -3,7 +3,7 @@ import '../../App.css';
 import Product from '../Product/Product';
 
 export default function HomeTabContent(props) {
-    const [limit, setLimit] = useState(10)
+    const [limit, setLimit] = useState(12)
     const [loading, setLoading] = useState(false)
     const products = props.products
     const height = props.height
@@ -12,7 +12,7 @@ export default function HomeTabContent(props) {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-            setLimit(limit + 5);
+            setLimit(limit + 6);
         }, 1500);
     }
 
@@ -45,7 +45,7 @@ export default function HomeTabContent(props) {
                 }
             </div>
             {
-                (products.length > 10 && products.length >= limit) &&
+                (products.length > 12 && products.length >= limit) &&
                 <div className="tab-loadmore flex-center">
                     <div
                     className="tab-loadmore-btn btn"
