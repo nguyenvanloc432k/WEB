@@ -17,14 +17,14 @@ function Banner(props) {
     const [currentBanner, setCurrentBanner] = useState(1);
     const collection = props.collection;
 
-    // useEffect(() => {
-    //     const slide = setInterval(() => {
-    //         setCurrentBanner(currentBanner + 1);
-    //     }, 3000)
-    //     return () => {
-    //         clearInterval(slide);
-    //     };
-    // }, [currentBanner]); //cap nhat sau moi khi thay doi currentBanner
+    useEffect(() => {
+        const slide = setInterval(() => {
+            setCurrentBanner(currentBanner + 1);
+        }, 3000)
+        return () => {
+            clearInterval(slide);
+        };
+    }, [currentBanner]); //cap nhat sau moi khi thay doi currentBanner
 
     if (currentBanner > 3) {
         setCurrentBanner(1);
