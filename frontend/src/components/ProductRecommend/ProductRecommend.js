@@ -6,7 +6,7 @@ import '../../App.css'
 const ProductRecommend = (props) => {
     const [products, setProducts] = useState([])
     let productInfo = []
-    if (props.product) {
+    if (props.product != 0) {
         productInfo = props.product;
     }
     useEffect(() => {
@@ -18,35 +18,37 @@ const ProductRecommend = (props) => {
     }, [])
 
     const recommendProducts = [];
+
     products.filter((item) => {
-        if (item.id !== productInfo.id) {
-            if (item.productSex === productInfo.productSex) {
-                if (item.productCate === productInfo.productCate &&
-                    item.productGroupCate === productInfo.productGroupCate) {
-                    recommendProducts.push(item)
-                } else if (item.productGroupCate === productInfo.productGroupCate) {
-                    recommendProducts.push(item)
-                } else {
-                    recommendProducts.push(item)
-                }
+        if (item.productID !== productInfo.productID) {
+            if (Math.abs(item.productPrice -  productInfo.productPrice) < 2000000) {
+                recommendProducts.push(item)
             }
         }
         return null;
     })
 
-    let recommendProducts2 = recommendProducts.filter(function (elem, index, self) {
-        return index === self.indexOf(elem);
-    })
+    //push cho du 5 phan tu
+    if (recommendProducts.length < 6){
+        products.filter((item) => {
+            if (recommendProducts.length < 6){
+                recommendProducts.push(item)
+            }
+            else return
+        })
+    }
+
+    console.log("length: "+recommendProducts.length)
 
     return (
         <div className="ProductRecommend">
+            
             <div className="newsletter-container flex-center">
                 <div className="newsletter-title">Related products</div>
                 <div className="RecommendProduct">
-                    {recommendProducts2.slice(0, 5).map(function (item, index) {
+                    {recommendProducts.slice(0, 5).map(function (item) {
                         return (
                             <Product
-                                key={index}
                                 product={item}
                             />
                         )
