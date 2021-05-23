@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './ProductList.css';
 import Product from "../Product/Product";
-import ProductForFilterPage from "../Product/ProductForFilterPage";
 
 export default function ProductList(props) {
     const [limit, setLimit] = useState(9)//10 san pham toi da
@@ -25,7 +24,7 @@ export default function ProductList(props) {
                 {
                     limitProducts.map((item, index) => {
                         return (
-                            <ProductForFilterPage
+                            <Product
                                 key={index}
                                 product={item}
                                 index={index}

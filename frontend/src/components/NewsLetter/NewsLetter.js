@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import axios from 'axios'
 import './NewsLetter.css'
 export default function Newsletter () {
 
@@ -10,9 +9,10 @@ export default function Newsletter () {
     }
     const handleOnSubmit = (event) => {
         event.preventDefault(); // nhap den khi Enter moi tra ve ket qua
-        axios.post('http://pe.heromc.net:4000/email', {
+        fetch.post('http://pe.heromc.net:4000/email', {
             subscriber: emailInput
         })
+            .then(res => res.json())
             .then(res => {
                 alert(res.data)
             })

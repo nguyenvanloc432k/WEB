@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import "../App.css"
-import Collection from "../components/Collection/Collection";
 import HomeTab from "../components/HomeTab/HomeTab"
 import Banner from "../components/Banner/Banner";
 import RecommendBanner from "../components/RecommendBanner/RecommendBanner";
@@ -20,9 +19,6 @@ export default function Home() {
             <Banner collection={collection}/>
             <RecommendBanner/>
             <HomeTab/>
-            {/*<Collection*/}
-            {/*    collection={collection}*/}
-            {/*/>*/}
             <Newsletter/>
             <Footer/>
         </div>
