@@ -9,13 +9,18 @@ const ProductRecommend = (props) => {
     if (props.product) {
         productInfo = props.product;
     }
+    // useEffect(() => {
+    //     axios.get(`http://localhost:4000/products`)
+    //         .then(res => {
+    //             setProducts(res.data)
+    //         }
+    //         )
+    // }, [])
     useEffect(() => {
-        axios.get(`http://localhost:4000/products`)
-            .then(res => {
-                setProducts(res.data)
-            }
-            )
-    }, [])
+        fetch(`http://localhost:4000/products`)
+          .then(response => response.json())
+          .then(data => setProducts(data));
+      }, [])
 
     const recommendProducts = [];
     products.filter((item) => {

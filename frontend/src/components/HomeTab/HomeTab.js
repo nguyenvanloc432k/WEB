@@ -11,16 +11,21 @@ export default function HomeTab() {
   const [isActive, setIsActive] = useState(1); // hinh nhu la thua, vi isActive = currentTab
   const [products, setProducts] = useState([]); // mang chua danh sach san pham
 
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:4000/products`) // lay ve danh sach san pham
+  //     .then((res) => {
+  //       setProducts(res.data); // set state cho products
+  //     });
+  //   return () => {
+  //     // k can cleanup
+  //   };
+  // }, []); // chay dung 1 lan sau khi duoc render lan dau
   useEffect(() => {
-    axios
-      .get(`http://localhost:4000/products`) // lay ve danh sach san pham
-      .then((res) => {
-        setProducts(res.data); // set state cho products
-      });
-    return () => {
-      // k can cleanup
-    };
-  }, []); // chay dung 1 lan sau khi duoc render lan dau
+    fetch(`http://localhost:4000/products`)
+      .then(response => response.json())
+      .then(data => setProducts(data));
+  }, [])
 
   //Get product sold
   let height = 550;
