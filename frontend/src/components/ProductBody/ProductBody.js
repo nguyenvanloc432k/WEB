@@ -1,26 +1,22 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import '../../App.css'
 import './ProductBody.css'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faCartPlus, faChevronLeft, faChevronRight, faHeart, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { CartContext } from '../../contexts/Cart';
 
 const ProductBody = (props) => {
-
+    const {addToCart} = useContext(CartContext)
 
 
     const [countCart, setCountCart] = useState(1)
 
-    const productSmall = useRef(null)
-    const sliderWidth = useRef(null)
-
-
-    let slugSex = ''
     let product = ""
     let price = ''
     let length = 0
     let img_list = []
-    console.log("product:" + props.product)
+    // console.log("product:" + props.product)
     if (props.product.length != 0) {
         product = props.product;
         img_list = props.product.productImg.split(',')
@@ -40,7 +36,7 @@ const ProductBody = (props) => {
         setLoading(1)
         setTimeout(()=>{
             setLoading(0) 
-            // addToCart(product, countCart) 
+            addToCart(product, countCart) 
         }, 500)
         setCountCart(1)
     }
