@@ -155,7 +155,7 @@
     /* -webkit-line-clamp: 2;
     -webkit-box-orient: vertical; */
     max-width: 100%;
-    overflow: hidden;
+    overflow-y: hidden;
     min-height: 40px;
 }
 
