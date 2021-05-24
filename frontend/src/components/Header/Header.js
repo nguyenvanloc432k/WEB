@@ -83,7 +83,7 @@ function Header(props){
                     </li>
                 </ul>
             </div>
-            <Search searchOpen={searchOpen} clickToClose={clickToClose}/>
+            <Search check={props.check} searchOpen={searchOpen} clickToClose={clickToClose}/>
             <Cart cartOpen={cartOpen} clickToClose={clickToClose}/>
         </div>
     )

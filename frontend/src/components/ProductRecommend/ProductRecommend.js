@@ -1,21 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'
 import Product from '../Product/Product'
 import './ProductRecommend.css'
 import '../../App.css'
+import { withRouter } from 'react-router';
 const ProductRecommend = (props) => {
     const [products, setProducts] = useState([])
     let productInfo = []
     if (props.product != 0) {
         productInfo = props.product;
     }
-    // useEffect(() => {
-    //     axios.get(`http://localhost:4000/products`)
-    //         .then(res => {
-    //             setProducts(res.data)
-    //         }
-    //         )
-    // }, [])
+     
     useEffect(() => {
         fetch(`http://localhost:4000/products`)
           .then(response => response.json())
@@ -43,7 +37,7 @@ const ProductRecommend = (props) => {
         })
     }
 
-    console.log("length: "+recommendProducts.length)
+    const limitProducts = products.slice(0, 5)
 
     return (
         <div className="ProductRecommend">
@@ -51,10 +45,13 @@ const ProductRecommend = (props) => {
             <div className="newsletter-container flex-center">
                 <div className="newsletter-title">Related products</div>
                 <div className="RecommendProduct">
-                    {recommendProducts.slice(0, 5).map(function (item) {
+                    {limitProducts.map(function (item, index) {
                         return (
                             <Product
+                                check={props.check}
+                                key={index}
                                 product={item}
+                                index={index}
                             />
                         )
                     })}
@@ -68,4 +65,4 @@ const ProductRecommend = (props) => {
 
 
 
-export default ProductRecommend;
+export default withRouter(ProductRecommend);

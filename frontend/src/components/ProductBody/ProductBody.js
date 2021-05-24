@@ -40,7 +40,7 @@ const ProductBody = (props) => {
 
             {/* breadcrumb */}
             <div className="product-breadcrumb flex">
-                <Link className="breadcrumb-item breadcrumb-link" to='/'>Home</Link>
+                <a className="breadcrumb-item breadcrumb-link" href='/'>Home</a>
                 <FontAwesomeIcon icon={faAngleRight} className="breadcrumb-arrow" />
                 <div className="breadcrumb-item breadcrumb-product">{product.productName}</div>
             </div>

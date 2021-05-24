@@ -19,6 +19,9 @@ function Product(props) {
     const redirect = () => {    // sự kiện chuột, chuyển hướng trang đến /products/:id
         window.scrollTo(0,0)
         props.history.push(`/product/${product.productID}`);
+        if (props.check) {
+            props.check()
+        }
     }
 
     let productDate = new Date(product.productDate)

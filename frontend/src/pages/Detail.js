@@ -8,13 +8,18 @@ import ProductRecommend from "../components/ProductRecommend/ProductRecommend";
 import ProductBody from "../components/ProductBody/ProductBody";
 
 function Detail(props) {
-    const [id, setId] = useState(1);
+    const [id, setId] = useState(false);
 
     const [ product, setProduct ] = useState([])
 
     useEffect(() => {
         document.body.style.overflow = 'unset'; // giup scroll
     })
+
+    const check = () => {
+        const id_ = !id
+        setId(id_)
+    }
     
     // lay dư lieu
     useEffect(() => {
@@ -25,17 +30,17 @@ function Detail(props) {
                  setProduct(data[parseInt(parseInt(props.match.params.id) - 1)])
                  console.log(product)
              })
-    },[])
+    },[id])
 
-    console.log(product)
+    // console.log(product)
     
     
     return (
         <div className="ProductDetail">
-            <Header/>
+            <Header check={check}/>
             <Banner/>
             <ProductBody product={product}/>
-            <ProductRecommend product={product}/>
+            <ProductRecommend product={product} check={check}/>
             <Newsletter/>
             <Footer/>
         </div>

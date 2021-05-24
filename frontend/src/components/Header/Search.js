@@ -31,13 +31,21 @@ function Search(props) {
         setProducts(search)
     }
     const handleClick = (e) => {
-        const id = e.target.id.toString()
+        let id = e.target.id.toString()
         console.log(props)
-        if (props.history.location.pathname.slice(0, 8) === '/product'){
+        if (props.history.location.pathname.slice(0, 9) === '/product/'){
+            console.log(props.history)
             props.history.push(`${id}`)
+            if (props.check){
+                props.check()
+            }
             props.clickToClose()
         }
-        else props.history.push(`product/${id}`)
+        else {
+            id = parseInt(id)
+            props.history.push(`product/${id}`)
+            console.log("2222222")
+        }
     }
 
     return (
