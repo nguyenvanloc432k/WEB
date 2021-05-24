@@ -2,14 +2,14 @@ import React, { useRef, useState } from 'react';
 import './NewsLetter.css'
 export default function Newsletter () {
 
-    const inputEmailRef = useRef();//chua tim hieu
+    const inputEmailRef = useRef();
     const [emailInput, setEmailInput] = useState(""); // tao mot email la rong
     const handleOnChange = (event) => {
         setEmailInput(event.target.value) // lay email khi handle set cho emailInput
     }
     const handleOnSubmit = (event) => {
         event.preventDefault(); // nhap den khi Enter moi tra ve ket qua
-        fetch.post('http://pe.heromc.net:4000/email', {
+        fetch.post('http://localhost:4000/email', {
             subscriber: emailInput
         })
             .then(res => res.json())

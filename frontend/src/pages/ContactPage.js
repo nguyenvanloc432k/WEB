@@ -7,7 +7,6 @@ import Header from "../components/Header/Header";
 import Contact from "../components/Contact/Contact";
 
 export default function ContactPage() {
-    const [collection, setCollection] = useState([]);
     useEffect(() => {
         document.body.style.overflow = 'unset'; // chua biet de lam gi
     }, [])
@@ -15,12 +14,7 @@ export default function ContactPage() {
     return (
         <div className="Contact">
             <Header/>
-            <Banner collection={collection}/>
-            {/*<RecommendBanner/>*/}
-            {/*<HomeTab/>*/}
-            {/*<Collection*/}
-            {/*    collection={collection}*/}
-            {/*/>*/}
+            <Banner/>
             <Contact />
             <Newsletter/>
             <Footer/>

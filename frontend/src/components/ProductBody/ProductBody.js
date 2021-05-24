@@ -8,8 +8,6 @@ import { CartContext } from '../../contexts/Cart';
 
 const ProductBody = (props) => {
     const {addToCart} = useContext(CartContext)
-
-
     const [countCart, setCountCart] = useState(1)
 
     let product = ""
@@ -23,10 +21,6 @@ const ProductBody = (props) => {
         length = img_list.length
         price = (product.productPrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
     }
-
-
-
-
 
     const [imgIndex, setImgIndex] = useState(0)
 
@@ -54,8 +48,6 @@ const ProductBody = (props) => {
             <div className='product-detail flex'>
 
                 <div className="product-gallery flex">
-
-
                     {product.productImg && img_list.map((item, index) => {
                         return (
                             imgIndex===index && 

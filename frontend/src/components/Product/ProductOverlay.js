@@ -34,33 +34,21 @@ function ProductOverlay(props) {
     }
 
     return (
-        <div
-            className="product-overlay"
-            id="overlay"
-            onClick={redirect}
-        >
-            <div
-                className="product-icon-box flex-center icon-cart btn"
-                onClick={cartClick}
-            >
+        <div className="product-overlay" id="overlay" onClick={redirect}>
+            <div className="product-icon-box flex-center icon-cart btn" onClick={cartClick}>
                 {
                     loading === 1 &&
                     <div className="loading-icon"></div>
                 }
                 { loading !== 1 &&  <FontAwesomeIcon icon={faCartPlus} style={{marginRight: '3px'}}/> }
             </div>
-            <div className="product-icon-box flex-center icon-wishlist btn"
-                onClick={wishListClick}
-            >
+            <div className="product-icon-box flex-center icon-wishlist btn" onClick={wishListClick}>
                 { loading === 2 && 
                     <div className="loading-icon"></div>
                 }
                 { loading !== 2 && <FontAwesomeIcon icon={faHeart}/>}
             </div>
-            <div
-                className="product-icon-box flex-center icon-view btn"
-                onClick={props.openView}
-                >
+            <div className="product-icon-box flex-center icon-view btn" onClick={props.openView}>
                 <FontAwesomeIcon icon={faEye}/>
             </div>
         </div>

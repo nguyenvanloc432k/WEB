@@ -23,13 +23,14 @@ function Product(props) {
 
     let productDate = new Date(product.productDate)
     let today = new Date()
+    let sale = ((1-product.productSale/product.productPrice)*100).toFixed(2);
 
     return (
         <div className="Product">
             <div className="product-img" onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
                 <div className="product-tag">
                     {
-                        product.productSale > 0 && <div className="product-tag-item sale">{product.productSale}%</div>}
+                        product.productSale > 0 && <div className="product-tag-item sale">giảm {product.productPrice - product.productSale}Đ</div>}
                     {
                         product.productSold > 40 && <div className="product-tag-item hot">HOT</div>}
                     {
@@ -37,7 +38,6 @@ function Product(props) {
                 </div>
                 <div className="product-img-bg" onClick={redirect}>
                     <img src={product.productImg}>
-
                     </img>
                 </div>
                 <ProductOverlay

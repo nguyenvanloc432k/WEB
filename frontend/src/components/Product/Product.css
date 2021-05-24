@@ -5,14 +5,20 @@
 }
 
 .Product {
-  width: calc(33% - 30px);
-  margin: 15px 15px 20px 15px;
+  width: calc(25%);
+  padding: 15px 15px 20px 15px;
   text-align: center;
   height: calc(25vw);
 }
 
+.Product:hover{
+  background-clip: border-box;
+  box-shadow: 0 0 3px 0 #dee2e6;
+  border-radius: 6px;
+}
+
 .product-img {
-  height: calc(25vw - 68px);
+  height: calc(25vw - 100px);
   position: relative;
 }
 .product-tag {
@@ -27,7 +33,7 @@
 }
 .product-tag-item {
   line-height: 20px;
-  width: 40px;
+  width: 75px;
   height: 20px;
   margin: 10px 0;
   text-align: center;

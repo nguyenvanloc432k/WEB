@@ -3,7 +3,7 @@ import './ProductList.css';
 import Product from "../Product/Product";
 
 export default function ProductList(props) {
-    const [limit, setLimit] = useState(9)//10 san pham toi da
+    const [limit, setLimit] = useState(8)//10 san pham toi da
     const [loading, setLoading] = useState(false)
     const products = props.products
     const height = props.height
@@ -12,7 +12,7 @@ export default function ProductList(props) {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-            setLimit(limit + 6);
+            setLimit(limit + 4);
         }, 1500);
     }
 

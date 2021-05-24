@@ -78,14 +78,7 @@ function Search(props) {
                                         <div className="search-item-name">
                                             <p>{item.productName}</p>
                                         </div>
-                                        {/* <div className="item-view">
-                                            <div className="button"
-                                                 id={item.productID}
-                                                 onClick={handleClick}
-                                            >
-                                                VIEW
-                                            </div>
-                                        </div> */}
+
                                     </div>
                                 </div>
                             )
