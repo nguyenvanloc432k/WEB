@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    grid-template-columns: 100px auto 20% 15% 15%;
+    grid-template-columns: 100px auto 20% 15% 15% 5%;
     row-gap: 20px;
     column-gap: 20px;
     border-bottom: 1px solid #eee;
@@ -15,6 +15,11 @@
     justify-self: start;
     align-self: center;
 }
+
+.trash:hover {
+    cursor: pointer;
+}
+
 .count {
     padding: 10px;
     width: 50px;

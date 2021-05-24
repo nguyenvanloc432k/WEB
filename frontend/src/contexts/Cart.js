@@ -47,15 +47,11 @@ export function CartProvider(props) {
             if (cartItems.length === 0) {
                 virtualCart.push({...product, count: count})
             } else {
-                if (!isExists(cartItems, product)) {
-                    virtualCart.push({...product, count: count})
+                const productNew = isExists(cartItems, product)
+                if (!productNew) {
+                    virtualCart.push({...product, count: 1})
                 } else {
-                    for (let i of virtualCart) {
-                        if (i.productID === product.productID) {
-                            i.count += count
-                            break
-                        }
-                    }
+                    productNew.count += count
                 }
             }
             localStorage.setItem('cart', JSON.stringify(virtualCart))
@@ -67,15 +63,11 @@ export function CartProvider(props) {
             if (cartItems.length === 0) {
                 virtualCart.push({...product, count: 1})
             } else {
-                if (!isExists(cartItems, product)) {
+                const productNew = isExists(cartItems, product)
+                if (!productNew) {
                     virtualCart.push({...product, count: 1})
                 } else {
-                    for (let i = 0; i < virtualCart.length; i++) {
-                        if (virtualCart[i].productID === product.productID) {
-                            virtualCart[i].count += 1
-                            break
-                        }
-                    }
+                    productNew.count += 1
                 }
             }
             localStorage.setItem('cart', JSON.stringify(virtualCart))
@@ -85,10 +77,13 @@ export function CartProvider(props) {
     }
 
     const removeFromCart = (event) => {
-        const id = event.target.id
+        const id =parseInt(event.target.id)
+
+        // console.log("remove"+id)
         const virtualCart = [...cartItems]
         for (let i = 0; i < virtualCart.length; i++) {
             if (virtualCart[i].productID === id) {
+                console.log("an")
                 virtualCart.splice(i, 1)
                 break
             }

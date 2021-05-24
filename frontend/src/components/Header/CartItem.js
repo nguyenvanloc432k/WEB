@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { CartContext } from '../../contexts/Cart';
 import './CartItem.css'
 import '../../App.css'
@@ -23,6 +23,8 @@ export default function CartItem(props) {
                 <div className="field">Amount</div>
                 <div className="field">Price</div>
                 <div className="field">Total Price</div>
+                <div className="field">Remove</div>
+                
             </div>
             {
                 cartItems.map((item, index) => {
@@ -46,6 +48,11 @@ export default function CartItem(props) {
                             </div>
                             <div className="item">{convert(item.productPrice)}</div>
                             <div className="item">{convert(item.count*item.productPrice)}</div>
+                            <div className="item trash" id={item.productID} onClick={removeFromCart}>
+                                
+                                <FontAwesomeIcon  style={{pointerEvents: 'none'}} icon={faTrash}/>
+                            </div>
+
                         </div>
                     )
                 })
