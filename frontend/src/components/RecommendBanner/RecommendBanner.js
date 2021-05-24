@@ -20,7 +20,7 @@ function RecommendBanner() {
                 <div className="banner-box img-hover">
                     <img src={b1} height="100%" width="100%"></img>
                     <div className="blackbox-center-container">
-                        <div className="blackbox-title">New Arrivals</div>
+                        <div className="blackbox-title">Macbook</div>
                         <div className="blackbox-center">
                             {/* thẻ link đẻ chuyển */}
                             <div
@@ -39,7 +39,7 @@ function RecommendBanner() {
                         <div className="banner-top2 img-hover">
                             <img src={b2} height="100%" width="100%"></img>
                             <div className="blackbox-center-container">
-                                <div className="blackbox-title blackbox-title-small">Woman</div>
+                                <div className="blackbox-title blackbox-title-small">Apple</div>
                                 <div className="blackbox-center">
                                     <div
                                         className="blackbox-link blackbox-link-smaill a"
@@ -52,7 +52,7 @@ function RecommendBanner() {
                         <div className="banner-top2 img-hover">
                             <img src={b3} height="100%" width="100%"></img>
                             <div className="blackbox-center-container">
-                                <div className="blackbox-title blackbox-title-small">Man</div>
+                                <div className="blackbox-title blackbox-title-small">Dell</div>
                                 <div className="blackbox-center">
                                     <div
                                         className="blackbox-link blackbox-link-small a"
@@ -67,7 +67,7 @@ function RecommendBanner() {
                     <div className="banner-bottom img-hover">
                         <img src={b4} height="100%" width="100%"></img>
                         <div className="blackbox-center-container">
-                            <div className="blackbox-title blackbox-title-medium">Free Shipping On All Orders</div>
+                            <div className="blackbox-title blackbox-title-medium">Dell</div>
                             <div className="blackbox-center">
                                 <div className= "blackbox-link blackbox-link-medium a"
                                     to="/shop"
