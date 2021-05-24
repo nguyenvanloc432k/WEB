@@ -5,7 +5,6 @@ import { CartContext } from '../../contexts/Cart'
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import CartItem from './CartItem'
-import {withRouter} from 'react-router-dom'
 
 function Cart(props) {
     const {total} = useContext(CartContext)
@@ -46,4 +45,4 @@ function Cart(props) {
         </div>
     )
 }
-export default withRouter(Cart)
+export default Cart
