@@ -4,20 +4,21 @@ import axios from 'axios'
 import { faCartPlus, faCheckCircle, faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './Search.css'
 import '../../App.css'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router';
 
 function Search(props) {
     const [products, setProducts] = useState([])
     const [searchInput, setSearchInput] = useState("")
     const [constProducts, setConstProducts] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:4000/products`)
-            .then(res => {
-                setConstProducts(res.data)
-                setProducts(res.data)
-            })
+        fetch('http://localhost:4000/products')
+            .then(response => response.json())
+             .then(data => {
+                setConstProducts(data)
+                setProducts(data)
+             })
     }, [])
-
+    
     const search = (event) => {
         const value = event.target.value
         const search = []
@@ -30,8 +31,13 @@ function Search(props) {
         setProducts(search)
     }
     const handleClick = (e) => {
-        const id = e.target.id
-        props.history.push(`products/${id}`)
+        const id = e.target.id.toString()
+        console.log(props)
+        if (props.history.location.pathname.slice(0, 8) === '/product'){
+            props.history.push(`${id}`)
+            props.clickToClose()
+        }
+        else props.history.push(`product/${id}`)
     }
 
     return (
@@ -64,7 +70,7 @@ function Search(props) {
                         (products.length > 0 && searchInput !== "") &&
                         products.map((item, index) => {
                             return (
-                                <div className="search-item" key={index}>
+                                <div className="search-item" key={index}  id={item.productID}  onClick={handleClick}>
                                     <div className="search-item-img">
                                         <img src={item.productImg} height="100%" alt=""/>
                                     </div>
@@ -72,14 +78,14 @@ function Search(props) {
                                         <div className="search-item-name">
                                             <p>{item.productName}</p>
                                         </div>
-                                        <div className="item-view">
+                                        {/* <div className="item-view">
                                             <div className="button"
                                                  id={item.productID}
                                                  onClick={handleClick}
                                             >
                                                 VIEW
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             )
