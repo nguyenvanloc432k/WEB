@@ -21,11 +21,11 @@ function Detail(props) {
     
     // lay dư lieu
     useEffect(() => {
-        axios.get('http://localhost:4000/products')
-             .then(res => {
-                 console.log(res.data[0])
-                 const data = res.data[parseInt(parseInt(props.match.params.id) - 1)]
-                 setProduct(data)
+        fetch('http://localhost:4000/products')
+            .then(response => response.json())
+             .then(data => {
+                //  console.log(data)
+                 setProduct(data[parseInt(parseInt(props.match.params.id) - 1)])
                  console.log(product)
              })
     },[])
